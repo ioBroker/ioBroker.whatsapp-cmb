@@ -1,0 +1,85 @@
+{
+    "common": {
+        "name": "whatsapp-cmb",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "WhatsApp CallMeBot",
+        "titleLang": {
+            "en": "WhatsApp CallMeBot",
+            "de": "WhatsApp CallMeBot",
+            "ru": "WhatsApp CallMeBot",
+            "pt": "WhatsApp CallMeBot",
+            "nl": "WhatsApp CallMeBot",
+            "fr": "Appel WhatsApp",
+            "it": "WhatsApp CallMeBot",
+            "es": "WhatsApp CallMeBot",
+            "pl": "WhatsApp CallMeBot",
+            "zh-cn": "WhatsApp的CallMeBot"
+        },
+        "desc": {
+            "en": "Allows to send to your whatsapp the messages from ioBroker",
+            "de": "Ermöglicht das Senden der Nachrichten von ioBroker an Ihre WhatsApp",
+            "ru": "Позволяет отправлять на ваш WhatsApp сообщения от ioBroker",
+            "pt": "Permite enviar para o seu whatsapp as mensagens do ioBroker",
+            "nl": "Hiermee kunt u de berichten van ioBroker naar uw WhatsApp sturen",
+            "fr": "Permet d'envoyer à votre WhatsApp les messages d'ioBroker",
+            "it": "Permette di inviare al tuo whatsapp i messaggi di ioBroker",
+            "es": "Permite enviar a tu whatsapp los mensajes de ioBroker",
+            "pl": "Pozwala wysyłać do WhatsApp wiadomości od ioBroker",
+            "zh-cn": "允许将来自ioBroker的消息发送到您的whatsapp"
+        },
+        "authors": [
+            "ioBroker <dogafox@gmail.com>"
+        ],
+        "keywords": [
+            "whatsapp",
+            "notifications"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "whatsapp-cmb.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/bluefox/ioBroker.whatsapp-cmb/master/admin/whatsapp-cmb.png",
+        "readme": "https://github.com/bluefox/ioBroker.whatsapp-cmb/blob/master/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "messaging",
+        "compact": true,
+        "materialize": true,
+        "dependencies": [
+            {
+                "js-controller": ">=1.4.2"
+            }
+        ]
+    },
+    "native": {
+        "apikey": "",
+        "defaultNumber": ""
+    },
+    "objects": [],
+    "instanceObjects": [{
+        "_id": "sendMessage",
+        "common": {
+            "name": "Send message",
+            "write": true,
+            "read": true,
+            "type": "string",
+            "role": "state"
+        },
+        "native": {}
+    }]
+}

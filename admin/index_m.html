@@ -1,0 +1,101 @@
+<html>
+
+<head>
+
+    <!-- Load ioBroker scripts and styles-->
+    <link rel="stylesheet" type="text/css" href="../../css/adapter.css" />
+    <link rel="stylesheet" type="text/css" href="../../lib/css/materialize.css">
+
+    <script type="text/javascript" src="../../lib/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../socket.io/socket.io.js"></script>
+
+    <script type="text/javascript" src="../../js/translate.js"></script>
+    <script type="text/javascript" src="../../lib/js/materialize.js"></script>
+    <script type="text/javascript" src="../../js/adapter-settings.js"></script>
+
+    <!-- Load our own files -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="words.js"></script>
+
+    <script type="text/javascript">
+        // This will be called by the admin adapter when the settings page loads
+        function load(settings, onChange) {
+            // example: select elements with id=key and class=value and insert value
+            if (!settings) return;
+            $('.value').each(function () {
+                var $key = $(this);
+                var id = $key.attr('id');
+                if ($key.attr('type') === 'checkbox') {
+                    // do not call onChange direct, because onChange could expect some arguments
+                    $key.prop('checked', settings[id])
+                        .on('change', () => onChange())
+                        ;
+                } else {
+                    // do not call onChange direct, because onChange could expect some arguments
+                    $key.val(settings[id])
+                        .on('change', () => onChange())
+                        .on('keyup', () => onChange())
+                        ;
+                }
+            });
+            onChange(false);
+            // reinitialize all the Materialize labels on the page if you are dynamically adding inputs:
+            if (M) M.updateTextFields();
+        }
+
+        // This will be called by the admin adapter when the user presses the save button
+        function save(callback) {
+            // example: select elements with class=value and build settings object
+            var obj = {};
+            $('.value').each(function () {
+                var $this = $(this);
+                if ($this.attr('type') === 'checkbox') {
+                    obj[$this.attr('id')] = $this.prop('checked');
+                } else {
+                    obj[$this.attr('id')] = $this.val();
+                }
+            });
+            callback(obj);
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div class="m adapter-container">
+
+        <div class="row">
+            <div class="col s12 m4 l2">
+                <img src="whatsapp-cmb.png" class="logo">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s6 input-field">
+                <input type="number" class="value" id="apikey" />
+                <label for="apikey" class="translate">API key</label>
+            </div>
+            <div class="col s6 input-field">
+                <input type="string" class="value" id="defaultNumber" />
+                <label for="defaultNumber" class="translate">Default phone number</label>
+            </div>
+
+            <div class="col s6 input-field">
+                <p class="translate">You need to get the apikey form the bot before using the API:</p>
+				<ul>
+					<li class="translate">1. Add the phone number +34 644 10 55 84 into your Phone Contacts. (Name it it as you wish)</li>
+					<li class="translate">2. Send this message "I allow callmebot to send me messages" to the new Contact created (using WhatsApp of course)</li>
+					<li class="translate">3. Wait until you receive the message "API Activated for your phone number. Your APIKEY is 123123" from the bot. As this is still in beta testing, the activation can take up to 2 minutes.</li>
+					<li class="translate">4. The WhatsApp message from the bot will contain the apikey needed to send messages using the API.</li>
+					<li class="translate">5. You must enter the received key above.</li>
+				</ul>
+				<p class="translate">Detailed description how to get APIKEY could be found <a href="https://www.callmebot.com/blog/free-api-whatsapp-messages/" target="_blank">here</a>.</p
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
