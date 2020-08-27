@@ -9,9 +9,6 @@
 const utils = require('@iobroker/adapter-core');
 const request = require('request');
 
-// Load your modules here, e.g.:
-// const fs = require("fs");
-
 /**
  * The adapter instance
  * @type {ioBroker.Adapter}
@@ -21,17 +18,20 @@ let adapter;
 
 function sendMessageToWhatsApp(message, phoneNumber) {
     return new Promise((resolve, reject) =>  {
-        phoneNumber = phoneNumber || adapter.config.defaultNumber;
+        phoneNumber = phoneNumber || adapter.config.defaultPhone;
 
         if (message) {
-            const r = request(`https://api.callmebot.com/whatsapp.php?phone=${encodeURIComponent(phoneNumber)}&text=${encodeURIComponent(message)}&apikey=${adapter.config.apikey}`, (err, resp, body) => {
-                !err && resp.statusCode < 400 ? resolve() : reject(err || resp.statusCode);
+            const url = `https://api.callmebot.com/whatsapp.php?phone=${phoneNumber}&text=${encodeURIComponent(message)}&apikey=${adapter.config.apikey}`;
+            adapter.log.debug('Call ' + url);
+            request(url, (err, resp, body) => {
+                adapter.log.debug(body);
+                !err && resp.statusCode < 400 && (!body || !body.includes('ERROR')) ? resolve() : reject(err || body || resp.statusCode);
             })
                 .on('error', err => reject(err));
         } else {
             resolve();
         }
-    })
+    });
 }
 /**
  * Starts the adapter instance
@@ -41,32 +41,37 @@ function startAdapter(options) {
     // Create the adapter and define its methods
     return adapter = utils.adapter(Object.assign({}, options, {
         name: 'whatsapp-cmb',
-
-        // The ready callback is called when databases are connected and adapter received configuration.
-        // start here!
         ready: main, // Main method defined below for readability
-
-        // is called if a subscribed state changes
         stateChange: (id, state) => {
-            if (state && !state.ack && state.val && adapter.config.defaultNumber) {
+            if (state && !state.ack && state.val && adapter.config.defaultPhone) {
                 // The state was changed
-                adapter.log.debug(`Sending message ${state.val} to default number ${adapter.config.defaultNumber}`);
+                adapter.log.debug(`Sending message ${state.val} to default number ${adapter.config.defaultPhone}`);
                 sendMessageToWhatsApp(state.val)
                     .then(() => adapter.log.debug(`Successfully sent`))
                     .catch(err => adapter.log.error('Cannot send message: ' + err));
             }
         },
-
-        // Some message was sent to adapter instance over message box. Used by email, pushover, text2speech, ...
-        // requires "common.message" property to be set to true in io-package.json
         message: (obj) => {
         	if (typeof obj === 'object' && obj.message) {
-        		if (obj.command === 'send') {
+        		if (obj.command === 'send' ) {
+                    if (typeof obj.message !== 'object') {
+                        obj.message = {
+                            text: obj.message
+                        }
+                    }
+                    obj.message.phone = obj.message.phone || adapter.config.defaultPhone;
         			// e.g. send email or pushover or whatever
-        			adapter.log.info('send command');
+        			adapter.log.info(`Send ${obj.message.text} to ${obj.message.phone}`);
 
-        			// Send response in callback if required
-        			obj.callback && adapter.sendTo(obj.from, obj.command, 'Message sent', obj.callback);
+                    sendMessageToWhatsApp(obj.message.text, obj.message.phone)
+                        .then(() => {
+                            // Send response in callback if required
+                            obj.callback && adapter.sendTo(obj.from, obj.command, {result: 'Message sent'}, obj.callback);
+                        })
+                        .catch(err => {
+                            adapter.log.error('Cannot send message: ' + err);
+                            obj.callback && adapter.sendTo(obj.from, obj.command, {error: err}, obj.callback)
+                        });
         		}
         	}
         },
@@ -75,7 +80,7 @@ function startAdapter(options) {
 
 function main() {
     if (!adapter.config.apikey) {
-        adapter.log.warn('APIKEY is not provided. No messages will be sent')
+        adapter.log.warn('APIKEY is not provided. No messages will be sent');
         return;
     }
 

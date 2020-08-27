@@ -40,7 +40,7 @@
             });
             onChange(false);
             // reinitialize all the Materialize labels on the page if you are dynamically adding inputs:
-            if (M) M.updateTextFields();
+            M && M.updateTextFields();
         }
 
         // This will be called by the admin adapter when the user presses the save button
@@ -72,16 +72,20 @@
         </div>
 
         <div class="row">
-            <div class="col s6 input-field">
+            <div class="col l2 m2 s4 input-field">
                 <input type="number" class="value" id="apikey" />
                 <label for="apikey" class="translate">API key</label>
             </div>
-            <div class="col s6 input-field">
-                <input type="string" class="value" id="defaultNumber" />
-                <label for="defaultNumber" class="translate">Default phone number</label>
+        </div>
+        <div class="row">
+            <div class="col l2 m2 s4 input-field">
+                <input class="value" type="text" id="defaultPhone" />
+                <label for="defaultPhone" class="translate">Default phone number</label>
             </div>
+        </div>
+        <div class="row">
 
-            <div class="col s6 input-field">
+            <div class="col s12 input-field">
                 <p class="translate">You need to get the apikey form the bot before using the API:</p>
 				<ul>
 					<li class="translate">1. Add the phone number +34 644 10 55 84 into your Phone Contacts. (Name it it as you wish)</li>
