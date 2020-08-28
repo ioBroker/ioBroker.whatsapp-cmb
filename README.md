@@ -26,6 +26,9 @@ You need to get the API key form the bot before using the API:
 - The WhatsApp message from the bot will contain the API key needed to send messages using the API.
 - You can now use the API KEY in the ioBroker configuration.
 
+Example:
+![Example](img/whatsapp.jpg)
+
 ### Usage
 There are two possibilities to send a messages:
 - via `whatsapp-cmb.0.sendMessage`. Just write some text into this state and the message will be sent to default number, that was configured in settings dialog.
