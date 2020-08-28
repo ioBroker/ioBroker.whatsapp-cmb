@@ -15,6 +15,17 @@ Big thanks to free [CallMeBot](https://www.callmebot.com/blog/free-api-whatsapp-
 
 **Note** : *The Free API is only for personal use!*
 
+### Configuration
+*Following documentation was copied from [callmebot](https://www.callmebot.com/blog/free-api-whatsapp-messages/) page.*
+
+You need to get the API key form the bot before using the API:
+
+- Add the phone number +34 644 10 55 84 into your Phone Contacts. (Name it it as you wish.)
+- Send this message `I allow callmebot to send me messages` (in english) to the new contact created (using WhatsApp of course).
+- Wait until you receive the message `API Activated for your phone number. Your APIKEY is 123123` from the bot. As this is still in beta testing, the activation can take up to 2 minutes.
+- The WhatsApp message from the bot will contain the API key needed to send messages using the API.
+- You can now use the API KEY in the ioBroker configuration.
+
 ### Usage
 There are two possibilities to send a messages:
 - via `whatsapp-cmb.0.sendMessage`. Just write some text into this state and the message will be sent to default number, that was configured in settings dialog.
@@ -26,15 +37,23 @@ sendTo('whatsapp-cmb.0', 'send', {
 });
 ``` 
 
+![Blockly](img/blockly.png)
+
+<!--
+	Placeholder for the next version (at the beginning of the line):
+	### __WORK IN PROGRESS__
+-->
 ## Changelog
+### __WORK IN PROGRESS__
+* (bluefox) The documentation and translations were added.
 
 ### 0.0.1 (2020-08-27)
-* (ioBroker) initial release
+* (bluefox) initial release
 
 ## License
 MIT License
 
-Copyright (c) 2020 ioBroker <dogafox@gmail.com>
+Copyright (c) 2020 Bluefox <dogafox@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

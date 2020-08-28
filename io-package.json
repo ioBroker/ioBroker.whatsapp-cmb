@@ -42,7 +42,7 @@
             "zh-cn": "允许将来自ioBroker的消息发送到您的whatsapp"
         },
         "authors": [
-            "ioBroker <dogafox@gmail.com>"
+            "bluefox <dogafox@gmail.com>"
         ],
         "keywords": [
             "whatsapp",
@@ -75,6 +75,7 @@
     "objects": [],
     "instanceObjects": [{
         "_id": "sendMessage",
+        "type": "state",
         "common": {
             "name": "Send message",
             "write": true,

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Allows to send to your whatsapp the messages from ioBroker",
   "author": {
-    "name": "ioBroker",
+    "name": "bluefox",
     "email": "dogafox@gmail.com"
   },
   "homepage": "https://github.com/bluefox/ioBroker.whatsapp-cmb",

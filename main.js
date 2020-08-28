@@ -45,7 +45,7 @@ function startAdapter(options) {
         stateChange: (id, state) => {
             if (state && !state.ack && state.val && adapter.config.defaultPhone) {
                 // The state was changed
-                adapter.log.debug(`Sending message ${state.val} to default number ${adapter.config.defaultPhone}`);
+                adapter.log.debug(`Sending message "${state.val}" to default number "${adapter.config.defaultPhone}"`);
                 sendMessageToWhatsApp(state.val)
                     .then(() => adapter.log.debug(`Successfully sent`))
                     .catch(err => adapter.log.error('Cannot send message: ' + err));
