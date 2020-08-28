@@ -21,7 +21,7 @@ function sendMessageToWhatsApp(message, phoneNumber) {
         phoneNumber = phoneNumber || adapter.config.defaultPhone;
 
         if (message) {
-            const url = `https://api.callmebot.com/whatsapp.php?phone=${phoneNumber}&text=${encodeURIComponent(message)}&apikey=${adapter.config.apikey}`;
+            const url = `https://api.callmebot.com/whatsapp.php?phone=${phoneNumber}&text=${encodeURIComponent(message)}&apikey=${adapter.config.apikey}&source=iobroker`;
             adapter.log.debug('Call ' + url);
             request(url, (err, resp, body) => {
                 adapter.log.debug(body);
