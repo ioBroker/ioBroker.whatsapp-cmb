@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "whatsapp-cmb",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "news": {
+            "0.0.2": {
+                "en": "The documentation and translations were added.",
+                "de": "Die Dokumentation und Übersetzungen wurden hinzugefügt.",
+                "ru": "Добавлена документация и переводы.",
+                "pt": "A documentação e as traduções foram adicionadas.",
+                "nl": "De documentatie en vertalingen zijn toegevoegd.",
+                "fr": "La documentation et les traductions ont été ajoutées.",
+                "it": "La documentazione e le traduzioni sono state aggiunte.",
+                "es": "Se agregaron la documentación y las traducciones.",
+                "pl": "Dodano dokumentację i tłumaczenia.",
+                "zh-cn": "该文件和翻译增加了。"
+            },
             "0.0.1": {
                 "en": "initial release",
                 "de": "Erstveröffentlichung",
@@ -73,16 +85,18 @@
         "defaultPhone": ""
     },
     "objects": [],
-    "instanceObjects": [{
-        "_id": "sendMessage",
-        "type": "state",
-        "common": {
-            "name": "Send message",
-            "write": true,
-            "read": true,
-            "type": "string",
-            "role": "state"
-        },
-        "native": {}
-    }]
+    "instanceObjects": [
+        {
+            "_id": "sendMessage",
+            "type": "state",
+            "common": {
+                "name": "Send message",
+                "write": true,
+                "read": true,
+                "type": "string",
+                "role": "state"
+            },
+            "native": {}
+        }
+    ]
 }

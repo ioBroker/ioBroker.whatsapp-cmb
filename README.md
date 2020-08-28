@@ -47,7 +47,7 @@ sendTo('whatsapp-cmb.0', 'send', {
 	### __WORK IN PROGRESS__
 -->
 ## Changelog
-### __WORK IN PROGRESS__
+### 0.0.2 (2020-08-28)
 * (bluefox) The documentation and translations were added.
 
 ### 0.0.1 (2020-08-27)
