@@ -71,6 +71,8 @@
         "mode": "daemon",
         "type": "messaging",
         "compact": true,
+        "connectionType": "cloud",
+        "dataSource": "push",
         "messagebox": true,
         "materialize": true,
         "blockly": true,
