@@ -1,9 +1,9 @@
 {
     "common": {
         "name": "whatsapp-cmb",
-        "version": "0.1.2",
+        "version": "0.1.3",
         "news": {
-            "0.1.2": {
+            "0.1.3": {
                 "en": "The documentation and translations were added.",
                 "de": "Die Dokumentation und Übersetzungen wurden hinzugefügt.",
                 "ru": "Добавлена документация и переводы.",

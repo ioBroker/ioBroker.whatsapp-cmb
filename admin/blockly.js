@@ -98,7 +98,7 @@ Blockly.JavaScript['whatsapp-cmb'] = function(block) {
     }
 
     return 'sendTo("whatsapp-cmb' + dropdown_instance + '", "send", {\n    text: ' +
-        value_message + (value_phone ? ' \n    ' + 'phone: ' + value_phone : '') +
+        value_message + (value_phone ? ',\n    ' + 'phone: ' + value_phone : '') +
         '\n});\n' +
         logText;
 };
