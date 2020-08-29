@@ -3,12 +3,12 @@
 
 [![NPM version](http://img.shields.io/npm/v/iobroker.whatsapp-cmb.svg)](https://www.npmjs.com/package/iobroker.whatsapp-cmb)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.whatsapp-cmb.svg)](https://www.npmjs.com/package/iobroker.whatsapp-cmb)
-[![Dependency Status](https://img.shields.io/david/bluefox/iobroker.whatsapp-cmb.svg)](https://david-dm.org/bluefox/iobroker.whatsapp-cmb)
-[![Known Vulnerabilities](https://snyk.io/test/github/bluefox/ioBroker.whatsapp-cmb/badge.svg)](https://snyk.io/test/github/bluefox/ioBroker.whatsapp-cmb)
+[![Dependency Status](https://img.shields.io/david/ioBroker/iobroker.whatsapp-cmb.svg)](https://david-dm.org/ioBroker/iobroker.whatsapp-cmb)
+[![Known Vulnerabilities](https://snyk.io/test/github/ioBroker/ioBroker.whatsapp-cmb/badge.svg)](https://snyk.io/test/github/ioBroker/ioBroker.whatsapp-cmb)
 
 [![NPM](https://nodei.co/npm/iobroker.whatsapp-cmb.png?downloads=true)](https://nodei.co/npm/iobroker.whatsapp-cmb/)
 
-**Tests:**: [![Travis-CI](http://img.shields.io/travis/bluefox/ioBroker.whatsapp-cmb/master.svg)](https://travis-ci.org/bluefox/ioBroker.whatsapp-cmb)
+**Tests:**: [![Travis-CI](http://img.shields.io/travis/ioBroker/ioBroker.whatsapp-cmb/master.svg)](https://travis-ci.org/ioBroker/ioBroker.whatsapp-cmb)
 
 ## whatsapp-cmb adapter for ioBroker
 Big thanks to free [CallMeBot](https://www.callmebot.com/blog/free-api-whatsapp-messages/) service, this adapter allows you to send WhatsApp messages to yourself or other number.

@@ -6,7 +6,7 @@
     "name": "bluefox",
     "email": "dogafox@gmail.com"
   },
-  "homepage": "https://github.com/bluefox/ioBroker.whatsapp-cmb",
+  "homepage": "https://github.com/ioBroker/ioBroker.whatsapp-cmb",
   "license": "MIT",
   "keywords": [
     "whatsapp",
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bluefox/ioBroker.whatsapp-cmb"
+    "url": "https://github.com/ioBroker/ioBroker.whatsapp-cmb"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^2.4.0",
@@ -52,7 +52,7 @@
     "release": "node node_modules/@alcalzone/release-script/bin/release.js"
   },
   "bugs": {
-    "url": "https://github.com/bluefox/ioBroker.whatsapp-cmb/issues"
+    "url": "https://github.com/ioBroker/ioBroker.whatsapp-cmb/issues"
   },
   "readmeFilename": "README.md"
 }
