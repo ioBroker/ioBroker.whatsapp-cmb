@@ -43,16 +43,20 @@ function startAdapter(options) {
         name: 'whatsapp-cmb',
         ready: main, // Main method defined below for readability
         stateChange: (id, state) => {
-            if (state && !state.ack && state.val && adapter.config.defaultPhone) {
-                // The state was changed
-                adapter.log.debug(`Sending message "${state.val}" to default number "${adapter.config.defaultPhone}"`);
-                sendMessageToWhatsApp(state.val)
-                    .then(() => adapter.log.debug(`Successfully sent`))
-                    .catch(err => adapter.log.error('Cannot send message: ' + err));
+            if (state && !state.ack && state.val && adapter.config.apikey) {
+                if (!adapter.config.defaultPhone) {
+                    // The state was changed
+                    adapter.log.debug(`Sending message "${state.val}" to default number "${adapter.config.defaultPhone}"`);
+                    sendMessageToWhatsApp(state.val)
+                        .then(() => adapter.log.debug(`Successfully sent`))
+                        .catch(err => adapter.log.error('Cannot send message: ' + err));
+                } else {
+                    adapter.log.error('Please set the default phone number.');
+                }
             }
         },
         message: (obj) => {
-        	if (typeof obj === 'object' && obj.message) {
+        	if (typeof obj === 'object' && obj.message && adapter.config.apikey) {
         		if (obj.command === 'send' ) {
                     if (typeof obj.message !== 'object') {
                         obj.message = {
@@ -60,6 +64,11 @@ function startAdapter(options) {
                         }
                     }
                     obj.message.phone = obj.message.phone || adapter.config.defaultPhone;
+                    if (!obj.message.phone) {
+                        adapter.log.warn('Default phone number is not provided!');
+                        return obj.callback && adapter.sendTo(obj.from, obj.command, {result: 'Message sent'}, obj.callback);
+                    }
+
         			// e.g. send email or pushover or whatever
         			adapter.log.info(`Send ${obj.message.text} to ${obj.message.phone}`);
 

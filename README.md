@@ -36,7 +36,7 @@ There are two possibilities to send a messages:
 ```
 sendTo('whatsapp-cmb.0', 'send', {
     text: 'My message', 
-    phone: '+491234567890' // optional, if empty the message will be sent default configured number
+    phone: '+491234567890' // optional, if empty the message will be sent to the default configured number
 });
 ``` 
 
@@ -47,7 +47,7 @@ sendTo('whatsapp-cmb.0', 'send', {
 	### __WORK IN PROGRESS__
 -->
 ## Changelog
-### 0.1.1 (2020-08-29)
+### 0.1.2 (2020-08-29)
 * (bluefox) The documentation and translations were added.
 
 ### 0.0.1 (2020-08-27)
