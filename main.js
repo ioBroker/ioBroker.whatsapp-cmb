@@ -44,7 +44,7 @@ function startAdapter(options) {
         ready: main, // Main method defined below for readability
         stateChange: (id, state) => {
             if (state && !state.ack && state.val && adapter.config.apikey) {
-                if (!adapter.config.defaultPhone) {
+                if (adapter.config.defaultPhone) {
                     // The state was changed
                     adapter.log.debug(`Sending message "${state.val}" to default number "${adapter.config.defaultPhone}"`);
                     sendMessageToWhatsApp(state.val)
