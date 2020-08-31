@@ -25,7 +25,7 @@ function sendMessageToWhatsApp(message, phoneNumber) {
             adapter.log.debug('Call ' + url);
             request(url, (err, resp, body) => {
                 adapter.log.debug(body);
-                !err && resp.statusCode < 400 && (!body || !body.includes('ERROR')) ? resolve() : reject(err || body || resp.statusCode);
+                !err && resp && resp.statusCode < 400 && (!body || !body.includes('ERROR')) ? resolve() : reject(err || body || (resp && resp.statusCode));
             })
                 .on('error', err => reject(err));
         } else {
@@ -44,7 +44,7 @@ function startAdapter(options) {
         ready: main, // Main method defined below for readability
         stateChange: (id, state) => {
             if (state && !state.ack && state.val && adapter.config.apikey) {
-                if (!adapter.config.defaultPhone) {
+                if (adapter.config.defaultPhone) {
                     // The state was changed
                     adapter.log.debug(`Sending message "${state.val}" to default number "${adapter.config.defaultPhone}"`);
                     sendMessageToWhatsApp(state.val)
