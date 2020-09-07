@@ -50,17 +50,17 @@ systemDictionary = {
         "pl": "Musisz uzyskać klucz API od bota przed użyciem API:",
         "zh-cn": "在使用API之前，您需要从机器人获取API密钥："
     },
-    "1. Add the phone number +34 644 10 55 84 into your Phone Contacts. (Name it it as you wish)": {
-        "en": "1. Add the phone number +34 644 10 55 84 into your Phone Contacts. (Name it it as you wish)",
-        "de": "1. Fügen Sie die Telefonnummer +34 644 10 55 84 zu Ihren Telefonkontakten hinzu. (Nennen Sie es wie Sie möchten)",
-        "ru": "1. Добавьте телефонный номер +34 644 10 55 84 в свои телефонные контакты. (Назовите это как хотите)",
-        "pt": "1. Adicione o número de telefone +34 644 10 55 84 em seus Contatos do telefone. (Nomeie como desejar)",
-        "nl": "1. Voeg het telefoonnummer +34 644 10 55 84 toe aan uw telefooncontacten. (Noem het zoals je wilt)",
-        "fr": "1. Ajoutez le numéro de téléphone +34 644 10 55 84 dans vos contacts téléphoniques. (Nommez-le comme vous le souhaitez)",
-        "it": "1. Aggiungi il numero di telefono +34 644 10 55 84 nei tuoi contatti telefonici. (Chiamalo come desideri)",
-        "es": "1. Agregue el número de teléfono +34 644 10 55 84 en sus Contactos telefónicos. (Nómbrelo como desee)",
-        "pl": "1. Dodaj numer telefonu +34 644 10 55 84 do kontaktów w telefonie. (Nazwij to jak chcesz)",
-        "zh-cn": "1.将电话号码+34 644 10 55 84添加到您的电话联系人中。 （根据需要命名）"
+    "1. Add the phone number +34 698 28 89 73 into your Phone Contacts. (Name it it as you wish)": {
+        "en": "1. Add the phone number +34 698 28 89 73 into your Phone Contacts. (Name it it as you wish)",
+        "de": "1. Fügen Sie die Telefonnummer +34 698 28 89 73 zu Ihren Telefonkontakten hinzu. (Nennen Sie es wie Sie möchten)",
+        "ru": "1. Добавьте телефонный номер +34 698 28 89 73 в свои телефонные контакты. (Назовите это как хотите)",
+        "pt": "1. Adicione o número de telefone +34 698 28 89 73 em seus Contatos do telefone. (Nomeie como desejar)",
+        "nl": "1. Voeg het telefoonnummer +34 698 28 89 73 toe aan uw telefooncontacten. (Noem het zoals je wilt)",
+        "fr": "1. Ajoutez le numéro de téléphone +34 698 28 89 73 dans vos contacts téléphoniques. (Nommez-le comme vous le souhaitez)",
+        "it": "1. Aggiungi il numero di telefono +34 698 28 89 73 nei tuoi contatti telefonici. (Chiamalo come desideri)",
+        "es": "1. Agregue el número de teléfono +34 698 28 89 73 en sus Contactos telefónicos. (Nómbrelo como desee)",
+        "pl": "1. Dodaj numer telefonu +34 698 28 89 73 do kontaktów w telefonie. (Nazwij to jak chcesz)",
+        "zh-cn": "1.将电话号码+34 698 28 89 73添加到您的电话联系人中。 （根据需要命名）"
     },
     "2. Send this message `I allow callmebot to send me messages` (in english) to the new Contact created (using WhatsApp of course)": {
         "en": "2. Send this message <i>`I allow callmebot to send me messages`</i> (in english) to the new Contact created (using WhatsApp of course)",
