@@ -35,7 +35,7 @@ function sendMessageToWhatsApp(message, phoneNumber) {
 }
 /**
  * Starts the adapter instance
- * @param {Partial<ioBroker.AdapterOptions>} [options]
+ * @param {Partial<utils.AdapterOptions>} [options]
  */
 function startAdapter(options) {
     // Create the adapter and define its methods
@@ -56,12 +56,12 @@ function startAdapter(options) {
             }
         },
         message: (obj) => {
-        	if (typeof obj === 'object' && obj.message && adapter.config.apikey) {
-        		if (obj.command === 'send' ) {
+            if (typeof obj === 'object' && obj.message && adapter.config.apikey) {
+                if (obj.command === 'send' ) {
                     if (typeof obj.message !== 'object') {
                         obj.message = {
                             text: obj.message
-                        }
+                        };
                     }
                     obj.message.phone = obj.message.phone || adapter.config.defaultPhone;
                     if (!obj.message.phone) {
@@ -69,8 +69,8 @@ function startAdapter(options) {
                         return obj.callback && adapter.sendTo(obj.from, obj.command, {result: 'Message sent'}, obj.callback);
                     }
 
-        			// e.g. send email or pushover or whatever
-        			adapter.log.info(`Send ${obj.message.text} to ${obj.message.phone}`);
+                    // e.g. send email or pushover or whatever
+                    adapter.log.info(`Send ${obj.message.text} to ${obj.message.phone}`);
 
                     sendMessageToWhatsApp(obj.message.text, obj.message.phone)
                         .then(() => {
@@ -79,10 +79,10 @@ function startAdapter(options) {
                         })
                         .catch(err => {
                             adapter.log.error('Cannot send message: ' + err);
-                            obj.callback && adapter.sendTo(obj.from, obj.command, {error: err}, obj.callback)
+                            obj.callback && adapter.sendTo(obj.from, obj.command, {error: err}, obj.callback);
                         });
-        		}
-        	}
+                }
+            }
         },
     }));
 }
