@@ -85,14 +85,20 @@
         "compact": true,
         "connectionType": "cloud",
         "dataSource": "push",
+        "tier": 1,
         "messagebox": true,
         "materialize": true,
         "blockly": true,
         "dependencies": [
             {
-                "js-controller": ">=1.4.2"
+                "js-controller": ">=2.0.0"
             }
-        ]
+        ],
+        "plugins": {
+            "sentry": {
+                "dsn": "https://0377685fa8ec4b0889324f8d949c94d2@sentry.iobroker.net/183"
+            }
+        }
     },
     "native": {
         "apikey": "",

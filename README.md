@@ -10,6 +10,8 @@
 
 **Tests:**: [![Travis-CI](http://img.shields.io/travis/ioBroker/ioBroker.whatsapp-cmb/master.svg)](https://travis-ci.org/ioBroker/ioBroker.whatsapp-cmb)
 
+**This adapter uses Sentry libraries to automatically report exceptions and code errors to the developers.** For more details and for information how to disable the error reporting see [Sentry-Plugin Documentation](https://github.com/ioBroker/plugin-sentry#plugin-sentry)! Sentry reporting is used starting with js-controller 3.0.
+
 ## whatsapp-cmb adapter for ioBroker
 Big thanks to free [CallMeBot](https://www.callmebot.com/blog/free-api-whatsapp-messages/) service, this adapter allows you to send WhatsApp messages to yourself or other number.
 
@@ -47,6 +49,10 @@ sendTo('whatsapp-cmb.0', 'send', {
 	### __WORK IN PROGRESS__
 -->
 ## Changelog
+
+### __WORK IN PROGRESS__
+* (Apollon77) Add Sentry for crash reporting
+
 ### 0.1.6 (2020-08-31)
 * (Apollon77) Fixed the error with the phone number
 
@@ -59,7 +65,7 @@ sendTo('whatsapp-cmb.0', 'send', {
 ## License
 MIT License
 
-Copyright (c) 2020 Bluefox <dogafox@gmail.com>
+Copyright (c) 2020-2022 Bluefox <dogafox@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
