@@ -44,6 +44,8 @@ sendTo('whatsapp-cmb.0', 'send', {
 
 ![Blockly](img/blockly.png)
 
+Inf you want to send emojies please refer to https://www.callmebot.com/uncategorized/how-to-use-emoticos-with-the-api/
+
 <!--
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
@@ -51,6 +53,7 @@ sendTo('whatsapp-cmb.0', 'send', {
 ## Changelog
 
 ### __WORK IN PROGRESS__
+* (Apollon77) Add Emoticons support
 * (Apollon77) Add Sentry for crash reporting
 
 ### 0.1.6 (2020-08-31)

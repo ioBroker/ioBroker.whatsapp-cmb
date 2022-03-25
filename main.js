@@ -21,6 +21,13 @@ function sendMessageToWhatsApp(message, phoneNumber) {
         phoneNumber = phoneNumber || adapter.config.defaultPhone;
 
         if (message) {
+            message = encodeURIComponent(message);
+            // Detect Emojies after encoding, and reverse encoding for them again
+            // Details https://www.callmebot.com/uncategorized/list-of-urlencoded-unicode-emoticons-emojis/
+            const emojies = message.match(/%25F0%259F%25[0-9A-Fa-f]{2}%25[0-9A-Fa-f]{2}/g);
+            if (emojies && emojies.length) {
+                emojies.forEach(em => message = message.replace(em, decodeURIComponent(em)))
+            }
             const url = `https://api.callmebot.com/whatsapp.php?phone=${phoneNumber}&text=${encodeURIComponent(message)}&apikey=${adapter.config.apikey}&source=iobroker`;
             adapter.log.debug('Call ' + url);
             request(url, (err, resp, body) => {
