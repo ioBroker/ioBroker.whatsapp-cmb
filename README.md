@@ -50,7 +50,7 @@ Inf you want to send emojies please refer to https://www.callmebot.com/uncategor
 	### __WORK IN PROGRESS__
 -->
 ## Changelog
-### 0.2.0 (2022-03-25)
+### __WORK IN PROGRESS__
 * (Apollon77) Add Emoticons support
 * (Apollon77) Add Sentry for crash reporting
 
