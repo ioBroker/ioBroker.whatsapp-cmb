@@ -1,122 +1,134 @@
 {
-    "common": {
-        "name": "whatsapp-cmb",
-        "version": "0.2.0",
-        "news": {
-            "0.1.6": {
-                "en": "Fixed the error with the phone number",
-                "de": "Der Fehler mit der Telefonnummer wurde behoben",
-                "ru": "Исправлена ошибка с номером телефона",
-                "pt": "Corrigido o erro com o número de telefone",
-                "nl": "De fout met het telefoonnummer opgelost",
-                "fr": "Correction de l'erreur avec le numéro de téléphone",
-                "it": "Risolto l'errore con il numero di telefono",
-                "es": "Se corrigió el error con el número de teléfono.",
-                "pl": "Naprawiono błąd związany z numerem telefonu",
-                "zh-cn": "解决了电话号码错误"
-            },
-            "0.1.3": {
-                "en": "The documentation and translations were added.",
-                "de": "Die Dokumentation und Übersetzungen wurden hinzugefügt.",
-                "ru": "Добавлена документация и переводы.",
-                "pt": "A documentação e as traduções foram adicionadas.",
-                "nl": "De documentatie en vertalingen zijn toegevoegd.",
-                "fr": "La documentation et les traductions ont été ajoutées.",
-                "it": "La documentazione e le traduzioni sono state aggiunte.",
-                "es": "Se agregaron la documentación y las traducciones.",
-                "pl": "Dodano dokumentację i tłumaczenia.",
-                "zh-cn": "该文件和翻译增加了。"
-            },
-            "0.0.1": {
-                "en": "initial release",
-                "de": "Erstveröffentlichung",
-                "ru": "Начальная версия",
-                "pt": "lançamento inicial",
-                "nl": "Eerste uitgave",
-                "fr": "Première version",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "Pierwsze wydanie",
-                "zh-cn": "首次出版"
-            }
-        },
-        "title": "WhatsApp CallMeBot",
-        "titleLang": {
-            "en": "WhatsApp CallMeBot",
-            "de": "WhatsApp CallMeBot",
-            "ru": "WhatsApp CallMeBot",
-            "pt": "WhatsApp CallMeBot",
-            "nl": "WhatsApp CallMeBot",
-            "fr": "Appel WhatsApp",
-            "it": "WhatsApp CallMeBot",
-            "es": "WhatsApp CallMeBot",
-            "pl": "WhatsApp CallMeBot",
-            "zh-cn": "WhatsApp的CallMeBot"
-        },
-        "desc": {
-            "en": "Allows to send to your whatsapp the messages from ioBroker",
-            "de": "Ermöglicht das Senden der Nachrichten von ioBroker an Ihre WhatsApp",
-            "ru": "Позволяет отправлять на ваш WhatsApp сообщения от ioBroker",
-            "pt": "Permite enviar para o seu whatsapp as mensagens do ioBroker",
-            "nl": "Hiermee kunt u de berichten van ioBroker naar uw WhatsApp sturen",
-            "fr": "Permet d'envoyer à votre WhatsApp les messages d'ioBroker",
-            "it": "Permette di inviare al tuo whatsapp i messaggi di ioBroker",
-            "es": "Permite enviar a tu whatsapp los mensajes de ioBroker",
-            "pl": "Pozwala wysyłać do WhatsApp wiadomości od ioBroker",
-            "zh-cn": "允许将来自ioBroker的消息发送到您的whatsapp"
-        },
-        "authors": [
-            "bluefox <dogafox@gmail.com>"
-        ],
-        "keywords": [
-            "whatsapp",
-            "notifications"
-        ],
-        "license": "MIT",
-        "platform": "Javascript/Node.js",
-        "main": "main.js",
-        "icon": "whatsapp-cmb.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.whatsapp-cmb/master/admin/whatsapp-cmb.png",
-        "readme": "https://github.com/ioBroker/ioBroker.whatsapp-cmb/blob/master/README.md",
-        "loglevel": "info",
-        "mode": "daemon",
-        "type": "messaging",
-        "compact": true,
-        "connectionType": "cloud",
-        "dataSource": "push",
-        "tier": 1,
-        "messagebox": true,
-        "materialize": true,
-        "blockly": true,
-        "dependencies": [
-            {
-                "js-controller": ">=2.0.0"
-            }
-        ],
-        "plugins": {
-            "sentry": {
-                "dsn": "https://0377685fa8ec4b0889324f8d949c94d2@sentry.iobroker.net/183"
-            }
-        }
+  "common": {
+    "name": "whatsapp-cmb",
+    "version": "0.2.1",
+    "news": {
+      "0.2.1": {
+        "en": "Add Emoticons support\nAdd Sentry for crash reporting",
+        "de": "Unterstützung für Emoticons hinzufügen\nFügen Sie Sentry für Absturzberichte hinzu",
+        "ru": "Добавить поддержку смайликов\nДобавьте Sentry для отчетов о сбоях",
+        "pt": "Suporte para adicionar emoticons\nAdicionar Sentinela para relatórios de falhas",
+        "nl": "Ondersteuning voor emoticons toevoegen\nSentry toevoegen voor crashrapportage",
+        "fr": "Ajouter la prise en charge des émoticônes\nAjouter Sentry pour les rapports de plantage",
+        "it": "Aggiungi il supporto per le emoticon\nAggiungi Sentinella per la segnalazione degli arresti anomali",
+        "es": "Agregar compatibilidad con emoticonos\nAgregar Sentry para informes de fallas",
+        "pl": "Obsługa dodawania emotikonów\nDodaj Sentry do zgłaszania awarii",
+        "zh-cn": "添加表情支持\n添加 Sentry 以进行崩溃报告"
+      },
+      "0.1.6": {
+        "en": "Fixed the error with the phone number",
+        "de": "Der Fehler mit der Telefonnummer wurde behoben",
+        "ru": "Исправлена ошибка с номером телефона",
+        "pt": "Corrigido o erro com o número de telefone",
+        "nl": "De fout met het telefoonnummer opgelost",
+        "fr": "Correction de l'erreur avec le numéro de téléphone",
+        "it": "Risolto l'errore con il numero di telefono",
+        "es": "Se corrigió el error con el número de teléfono.",
+        "pl": "Naprawiono błąd związany z numerem telefonu",
+        "zh-cn": "解决了电话号码错误"
+      },
+      "0.1.3": {
+        "en": "The documentation and translations were added.",
+        "de": "Die Dokumentation und Übersetzungen wurden hinzugefügt.",
+        "ru": "Добавлена документация и переводы.",
+        "pt": "A documentação e as traduções foram adicionadas.",
+        "nl": "De documentatie en vertalingen zijn toegevoegd.",
+        "fr": "La documentation et les traductions ont été ajoutées.",
+        "it": "La documentazione e le traduzioni sono state aggiunte.",
+        "es": "Se agregaron la documentación y las traducciones.",
+        "pl": "Dodano dokumentację i tłumaczenia.",
+        "zh-cn": "该文件和翻译增加了。"
+      },
+      "0.0.1": {
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "Начальная версия",
+        "pt": "lançamento inicial",
+        "nl": "Eerste uitgave",
+        "fr": "Première version",
+        "it": "Versione iniziale",
+        "es": "Versión inicial",
+        "pl": "Pierwsze wydanie",
+        "zh-cn": "首次出版"
+      }
     },
-    "native": {
-        "apikey": "",
-        "defaultPhone": ""
+    "title": "WhatsApp CallMeBot",
+    "titleLang": {
+      "en": "WhatsApp CallMeBot",
+      "de": "WhatsApp CallMeBot",
+      "ru": "WhatsApp CallMeBot",
+      "pt": "WhatsApp CallMeBot",
+      "nl": "WhatsApp CallMeBot",
+      "fr": "Appel WhatsApp",
+      "it": "WhatsApp CallMeBot",
+      "es": "WhatsApp CallMeBot",
+      "pl": "WhatsApp CallMeBot",
+      "zh-cn": "WhatsApp的CallMeBot"
     },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "sendMessage",
-            "type": "state",
-            "common": {
-                "name": "Send message",
-                "write": true,
-                "read": true,
-                "type": "string",
-                "role": "state"
-            },
-            "native": {}
-        }
-    ]
+    "desc": {
+      "en": "Allows to send to your whatsapp the messages from ioBroker",
+      "de": "Ermöglicht das Senden der Nachrichten von ioBroker an Ihre WhatsApp",
+      "ru": "Позволяет отправлять на ваш WhatsApp сообщения от ioBroker",
+      "pt": "Permite enviar para o seu whatsapp as mensagens do ioBroker",
+      "nl": "Hiermee kunt u de berichten van ioBroker naar uw WhatsApp sturen",
+      "fr": "Permet d'envoyer à votre WhatsApp les messages d'ioBroker",
+      "it": "Permette di inviare al tuo whatsapp i messaggi di ioBroker",
+      "es": "Permite enviar a tu whatsapp los mensajes de ioBroker",
+      "pl": "Pozwala wysyłać do WhatsApp wiadomości od ioBroker",
+      "zh-cn": "允许将来自ioBroker的消息发送到您的whatsapp"
+    },
+    "authors": [
+      "bluefox <dogafox@gmail.com>"
+    ],
+    "keywords": [
+      "whatsapp",
+      "notifications"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "whatsapp-cmb.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.whatsapp-cmb/master/admin/whatsapp-cmb.png",
+    "readme": "https://github.com/ioBroker/ioBroker.whatsapp-cmb/blob/master/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "messaging",
+    "compact": true,
+    "connectionType": "cloud",
+    "dataSource": "push",
+    "tier": 1,
+    "messagebox": true,
+    "materialize": true,
+    "blockly": true,
+    "dependencies": [
+      {
+        "js-controller": ">=2.0.0"
+      }
+    ],
+    "plugins": {
+      "sentry": {
+        "dsn": "https://0377685fa8ec4b0889324f8d949c94d2@sentry.iobroker.net/183"
+      }
+    }
+  },
+  "native": {
+    "apikey": "",
+    "defaultPhone": ""
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "sendMessage",
+      "type": "state",
+      "common": {
+        "name": "Send message",
+        "write": true,
+        "read": true,
+        "type": "string",
+        "role": "state"
+      },
+      "native": {}
+    }
+  ]
 }
