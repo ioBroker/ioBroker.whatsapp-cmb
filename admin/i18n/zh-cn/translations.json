@@ -1,0 +1,12 @@
+{
+    "1. Add the phone number +34 698 28 89 73 into your Phone Contacts. (Name it it as you wish)": "1.将电话号码+34 698 28 89 73添加到您的电话联系人中。 （根据需要命名）",
+    "2. Send this message `I allow callmebot to send me messages` (in english) to the new Contact created (using WhatsApp of course)": "2.发送此消息<i>“I allow callmebot to send me messages”</i>（英语）到创建的新联系人（当然使用WhatsApp）",
+    "3. Wait until you receive the message `API Activated for your phone number. Your APIKEY is 123123` from the bot. As this is still in beta testing, the activation can take up to 2 minutes.": "3.等待直到收到消息“API Activated for your phone number. Your APIKEY is 123123`。由于这仍处于beta测试中，因此激活最多可能需要2分钟。",
+    "4. The WhatsApp message from the bot will contain the apikey needed to send messages using the API.": "4.机器人发出的WhatsApp消息将包含使用API发送消息所需的apikey。",
+    "5. You must enter the received key above.": "5.您必须在上面输入收到的密钥。",
+    "API key": "API密钥",
+    "Default phone number": "默认电话号码",
+    "Detailed description how to get APIKEY could be found <a href=\"https://www.callmebot.com/blog/free-api-whatsapp-messages/\" target=\"_blank\">here</a>.": "有关如何获取APIKEY的详细说明，请参见<a href=\"https://www.callmebot.com/blog/free-api-whatsapp-messages/\" target=\"_blank\">此处</a> 。",
+    "You need to get the API key form the bot before using the API:": "在使用API之前，您需要从机器人获取API密钥：",
+    "whatsapp-cmb adapter settings": "whatsapp-cmb的适配器设置"
+}

@@ -1,0 +1,12 @@
+{
+    "1. Add the phone number +34 698 28 89 73 into your Phone Contacts. (Name it it as you wish)": "1. Fügen Sie die Telefonnummer +34 698 28 89 73 zu Ihren Telefonkontakten hinzu. (Nennen Sie es wie Sie möchten)",
+    "2. Send this message `I allow callmebot to send me messages` (in english) to the new Contact created (using WhatsApp of course)": "2. Senden Sie diese Nachricht <i>\"I allow callmebot to send me messages\"</i> (auf Englisch) an den neu erstellten Kontakt (natürlich mit WhatsApp).",
+    "3. Wait until you receive the message `API Activated for your phone number. Your APIKEY is 123123` from the bot. As this is still in beta testing, the activation can take up to 2 minutes.": "3. Warten Sie, bis Sie die Meldung `API Activated for your phone number. Your APIKEY is 123123` vom Bot. Da dies noch im Beta-Test ist, kann die Aktivierung bis zu 2 Minuten dauern.",
+    "4. The WhatsApp message from the bot will contain the apikey needed to send messages using the API.": "4. Die WhatsApp-Nachricht vom Bot enthält die Apikey, die zum Senden von Nachrichten über die API erforderlich ist.",
+    "5. You must enter the received key above.": "5. Sie müssen den empfangenen Schlüssel oben eingeben.",
+    "API key": "API-Schlüssel",
+    "Default phone number": "Standardtelefonnummer",
+    "Detailed description how to get APIKEY could be found <a href=\"https://www.callmebot.com/blog/free-api-whatsapp-messages/\" target=\"_blank\">here</a>.": "Eine ausführliche Beschreibung, wie Sie APIKEY erhalten, finden Sie <a href=\"https://www.callmebot.com/blog/free-api-whatsapp-messages/\" target=\"_blank\">hier</a> .",
+    "You need to get the API key form the bot before using the API:": "Sie müssen den API-Schlüssel vom Bot erhalten, bevor Sie die API verwenden können:",
+    "whatsapp-cmb adapter settings": "Adaptereinstellungen für whatsapp-cmb"
+}
