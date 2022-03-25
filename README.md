@@ -1,14 +1,13 @@
 ![Logo](admin/whatsapp-cmb.png)
 # ioBroker.whatsapp-cmb
 
+![Number of Installations](http://iobroker.live/badges/whatsapp-cmb-installed.svg)
+![Number of Installations](http://iobroker.live/badges/whatsapp-cmb-stable.svg)
 [![NPM version](http://img.shields.io/npm/v/iobroker.whatsapp-cmb.svg)](https://www.npmjs.com/package/iobroker.whatsapp-cmb)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.whatsapp-cmb.svg)](https://www.npmjs.com/package/iobroker.whatsapp-cmb)
-[![Dependency Status](https://img.shields.io/david/ioBroker/iobroker.whatsapp-cmb.svg)](https://david-dm.org/ioBroker/iobroker.whatsapp-cmb)
-[![Known Vulnerabilities](https://snyk.io/test/github/ioBroker/ioBroker.whatsapp-cmb/badge.svg)](https://snyk.io/test/github/ioBroker/ioBroker.whatsapp-cmb)
 
-[![NPM](https://nodei.co/npm/iobroker.whatsapp-cmb.png?downloads=true)](https://nodei.co/npm/iobroker.whatsapp-cmb/)
-
-**Tests:**: [![Travis-CI](http://img.shields.io/travis/ioBroker/ioBroker.whatsapp-cmb/master.svg)](https://travis-ci.org/ioBroker/ioBroker.whatsapp-cmb)
+![Test and Release](https://github.com/ioBroker/ioBroker.whatsapp-cmb/workflows/Test%20and%20Release/badge.svg)
+[![Translation status](https://weblate.iobroker.net/widgets/adapters/-/whatsapp-cmb/svg-badge.svg)](https://weblate.iobroker.net/engage/adapters/?utm_source=widget)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.whatsapp-cmb.svg)](https://www.npmjs.com/package/iobroker.node-red)
 
 **This adapter uses Sentry libraries to automatically report exceptions and code errors to the developers.** For more details and for information how to disable the error reporting see [Sentry-Plugin Documentation](https://github.com/ioBroker/plugin-sentry#plugin-sentry)! Sentry reporting is used starting with js-controller 3.0.
 
