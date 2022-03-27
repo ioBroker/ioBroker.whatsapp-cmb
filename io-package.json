@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "whatsapp-cmb",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "news": {
+      "0.2.2": {
+        "en": "Fix message encoding",
+        "de": "Korrigieren Sie die Nachrichtencodierung",
+        "ru": "Исправить кодировку сообщений",
+        "pt": "Corrigir a codificação da mensagem",
+        "nl": "Berichtcodering repareren",
+        "fr": "Correction de l'encodage des messages",
+        "it": "Correggi la codifica dei messaggi",
+        "es": "Arreglar la codificación de mensajes",
+        "pl": "Napraw kodowanie wiadomości",
+        "zh-cn": "修复消息编码"
+      },
       "0.2.1": {
         "en": "Add Emoticons support\nAdd Sentry for crash reporting",
         "de": "Unterstützung für Emoticons hinzufügen\nFügen Sie Sentry für Absturzberichte hinzu",

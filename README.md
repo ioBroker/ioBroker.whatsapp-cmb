@@ -50,8 +50,7 @@ Inf you want to send emojies please refer to https://www.callmebot.com/uncategor
 	### __WORK IN PROGRESS__
 -->
 ## Changelog
-
-### __WORK IN PROGRESS__
+### 0.2.2 (2022-03-27)
 * (Apollon77) Fix message encoding
 
 ### 0.2.1 (2022-03-25)

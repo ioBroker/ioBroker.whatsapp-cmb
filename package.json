@@ -1,6 +1,6 @@
 {
   "name": "iobroker.whatsapp-cmb",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Allows to send to your whatsapp the messages from ioBroker",
   "author": {
     "name": "bluefox",
