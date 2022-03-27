@@ -28,7 +28,7 @@ function sendMessageToWhatsApp(message, phoneNumber) {
             if (emojies && emojies.length) {
                 emojies.forEach(em => message = message.replace(em, decodeURIComponent(em)));
             }
-            const url = `https://api.callmebot.com/whatsapp.php?phone=${phoneNumber}&text=${encodeURIComponent(message)}&apikey=${adapter.config.apikey}&source=iobroker`;
+            const url = `https://api.callmebot.com/whatsapp.php?phone=${phoneNumber}&text=${message}&apikey=${adapter.config.apikey}&source=iobroker`;
             adapter.log.debug('Call ' + url);
             request(url, (err, resp, body) => {
                 adapter.log.debug(body);
