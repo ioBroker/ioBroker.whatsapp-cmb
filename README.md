@@ -50,8 +50,7 @@ Inf you want to send emojies please refer to https://www.callmebot.com/uncategor
 	### __WORK IN PROGRESS__
 -->
 ## Changelog
-
-### __WORK IN PROGRESS__
+### 0.2.3 (2022-08-29)
 * (Apollon77) Refer to website for current phone number
 
 ### 0.2.2 (2022-03-27)

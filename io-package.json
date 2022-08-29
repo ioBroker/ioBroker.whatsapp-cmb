@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "whatsapp-cmb",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "news": {
+      "0.2.3": {
+        "en": "Refer to website for current phone number",
+        "de": "Website für aktuelle Telefonnummer verweisen",
+        "ru": "Ссылка на сайт для текущего номера телефона",
+        "pt": "Consulte o site para o número de telefone atual",
+        "nl": "Refer naar website",
+        "fr": "Consulter le site web pour le numéro de téléphone actuel",
+        "it": "Fare riferimento al sito web per il numero di telefono corrente",
+        "es": "Consulte el sitio web para el número de teléfono actual",
+        "pl": "Odpowiedź na aktualny numer telefonu",
+        "zh-cn": "电话号码网站"
+      },
       "0.2.2": {
         "en": "Fix message encoding",
         "de": "Korrigieren Sie die Nachrichtencodierung",
