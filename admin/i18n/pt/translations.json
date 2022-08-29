@@ -1,5 +1,5 @@
 {
-    "1. Add the phone number +34 698 28 89 73 into your Phone Contacts. (Name it it as you wish)": "1. Adicione o número de telefone +34 698 28 89 73 em seus Contatos do telefone. (Nomeie como desejar)",
+    "1. Add the phone number XXX (CallMeBot Website) into your Phone Contacts. (Name it it as you wish)": "1. Adicione o número de telefone XXX (CallMeBot Website) em seus Contatos do telefone. (Nomeie como desejar)",
     "2. Send this message `I allow callmebot to send me messages` (in english) to the new Contact created (using WhatsApp of course)": "2. Envie esta mensagem <i>`I allow callmebot to send me messages`</i> (em inglês) para o novo contato criado (usando WhatsApp, é claro)",
     "3. Wait until you receive the message `API Activated for your phone number. Your APIKEY is 123123` from the bot. As this is still in beta testing, the activation can take up to 2 minutes.": "3. Aguarde até receber a mensagem `API Activated for your phone number. Your APIKEY is 123123` do bot. Como ainda está em teste beta, a ativação pode levar até 2 minutos.",
     "4. The WhatsApp message from the bot will contain the apikey needed to send messages using the API.": "4. A mensagem WhatsApp do bot conterá o apikey necessário para enviar mensagens usando a API.",
