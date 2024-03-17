@@ -32,7 +32,17 @@ function sendMessageToWhatsApp(message, phoneNumber) {
             adapter.log.debug('Call ' + url);
             request(url, (err, resp, body) => {
                 adapter.log.debug(body);
-                !err && resp && resp.statusCode < 400 && (!body || !body.includes('ERROR')) ? resolve() : reject(err || body || (resp && resp.statusCode));
+                // 201 - wrong parameters
+                // 202 - your number is banned
+                // 203 - APikey is incorrect
+                // 209 - phone number is permanent banned
+                // 204 - Too many messages sent (API overflow for the phone number)
+                // 205 - Unknown error.
+                // 207 - Service is down
+                // 208 - Your number is in Pause.
+                // 209 - Quota exceeded
+                // 210 - Messaged queued to be sent later
+                !err && resp && resp.statusCode == 200 && (!body || !body.includes('ERROR')) ? resolve() : reject(err || body || (resp && resp.statusCode));
             })
                 .on('error', err => reject(err));
         } else {
