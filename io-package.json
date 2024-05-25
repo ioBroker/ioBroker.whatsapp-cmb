@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "whatsapp-cmb",
-    "version": "0.2.3",
+    "version": "0.3.0",
     "news": {
+      "0.3.0": {
+        "en": "Important: Node.js 18 and js-controller 5.0.19 is required at least\nTreats all response codes other than 200 as errors",
+        "de": "Wichtig: Node.js 18 und js-controller 5.0.19 ist mindestens erforderlich\nBehandelt alle Antwortcodes außer 200 als Fehler",
+        "ru": "Важно: Node.js 18 и js-контроллер 5.0.19 требуется по крайней мере\nРассматривает все коды ответов, кроме 200, как ошибки",
+        "pt": "Importante: Node.js 18 e js-controller 5.0.19 é exigido pelo menos\nTrata todos os códigos de resposta que não sejam 200 como erros",
+        "nl": "Belangrijk: Node.js 18 en js-controller 5.0.19 is minimaal vereist\nBehandelt alle responscodes anders dan 200 als fouten",
+        "fr": "Important: Node.js 18 et js-controller 5.0.19 est nécessaire au moins\nTraite tous les codes de réponse autres que 200 comme des erreurs",
+        "it": "Importante: Node.js 18 e js-controller 5.0.19 è richiesto almeno\nTratta tutti i codici di risposta diversi da 200 come errori",
+        "es": "Importante: Node.js 18 y js-controller 5.0.19 se requiere por lo menos\nTrata todos los códigos de respuesta que no sean 200 como errores",
+        "pl": "Ważne: Node.js 18 i kontroler js- 5.0.19 jest wymagane co najmniej\nTraktuje wszystkie kody odpowiedzi inne niż 200 jako błędy",
+        "uk": "Важливо: Node.js 18 і js-controller 5.0.19 потрібно принаймні\nПовідомляти всі коди відповіді, крім 200 помилок",
+        "zh-cn": "重要:至少需要18号节点和5.0.19号节点控制器\n将200以外所有响应代码作为错误处理"
+      },
       "0.2.3": {
         "en": "Refer to website for current phone number",
         "de": "Website für aktuelle Telefonnummer verweisen",

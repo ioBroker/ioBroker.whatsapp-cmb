@@ -50,7 +50,7 @@ Inf you want to send emojies please refer to https://www.callmebot.com/uncategor
 	### __WORK IN PROGRESS__
 -->
 ## Changelog
-### __WORK IN PROGRESS__
+### 0.3.0 (2024-05-25)
 * Important: Node.js 18 and js-controller 5.0.19 is required at least
 * (Sneak-L8) Treats all response codes other than 200 as errors
 
