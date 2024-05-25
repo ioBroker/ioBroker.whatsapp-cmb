@@ -13,7 +13,8 @@
         "it": "Fare riferimento al sito web per il numero di telefono corrente",
         "es": "Consulte el sitio web para el número de teléfono actual",
         "pl": "Odpowiedź na aktualny numer telefonu",
-        "zh-cn": "电话号码网站"
+        "zh-cn": "电话号码网站",
+        "uk": "Зверніться до веб-сайту, щоб дізнатися поточний номер телефону"
       },
       "0.2.2": {
         "en": "Fix message encoding",
@@ -25,7 +26,8 @@
         "it": "Correggi la codifica dei messaggi",
         "es": "Arreglar la codificación de mensajes",
         "pl": "Napraw kodowanie wiadomości",
-        "zh-cn": "修复消息编码"
+        "zh-cn": "修复消息编码",
+        "uk": "Виправити кодування повідомлень"
       },
       "0.2.1": {
         "en": "Add Emoticons support\nAdd Sentry for crash reporting",
@@ -37,7 +39,8 @@
         "it": "Aggiungi il supporto per le emoticon\nAggiungi Sentinella per la segnalazione degli arresti anomali",
         "es": "Agregar compatibilidad con emoticonos\nAgregar Sentry para informes de fallas",
         "pl": "Obsługa dodawania emotikonów\nDodaj Sentry do zgłaszania awarii",
-        "zh-cn": "添加表情支持\n添加 Sentry 以进行崩溃报告"
+        "zh-cn": "添加表情支持\n添加 Sentry 以进行崩溃报告",
+        "uk": "Додайте підтримку смайлів\nДодайте Sentry для звітування про збої"
       },
       "0.1.6": {
         "en": "Fixed the error with the phone number",
@@ -49,7 +52,8 @@
         "it": "Risolto l'errore con il numero di telefono",
         "es": "Se corrigió el error con el número de teléfono.",
         "pl": "Naprawiono błąd związany z numerem telefonu",
-        "zh-cn": "解决了电话号码错误"
+        "zh-cn": "解决了电话号码错误",
+        "uk": "Виправили помилку з номером телефону"
       },
       "0.1.3": {
         "en": "The documentation and translations were added.",
@@ -61,7 +65,8 @@
         "it": "La documentazione e le traduzioni sono state aggiunte.",
         "es": "Se agregaron la documentación y las traducciones.",
         "pl": "Dodano dokumentację i tłumaczenia.",
-        "zh-cn": "该文件和翻译增加了。"
+        "zh-cn": "该文件和翻译增加了。",
+        "uk": "Додано документацію та переклади."
       },
       "0.0.1": {
         "en": "initial release",
@@ -73,7 +78,8 @@
         "it": "Versione iniziale",
         "es": "Versión inicial",
         "pl": "Pierwsze wydanie",
-        "zh-cn": "首次出版"
+        "zh-cn": "首次出版",
+        "uk": "початковий випуск"
       }
     },
     "title": "WhatsApp CallMeBot",
@@ -87,7 +93,8 @@
       "it": "WhatsApp CallMeBot",
       "es": "WhatsApp CallMeBot",
       "pl": "WhatsApp CallMeBot",
-      "zh-cn": "WhatsApp的CallMeBot"
+      "zh-cn": "WhatsApp的CallMeBot",
+      "uk": "WhatsApp CallMeBot"
     },
     "desc": {
       "en": "Allows to send to your whatsapp the messages from ioBroker",
@@ -99,7 +106,8 @@
       "it": "Permette di inviare al tuo whatsapp i messaggi di ioBroker",
       "es": "Permite enviar a tu whatsapp los mensajes de ioBroker",
       "pl": "Pozwala wysyłać do WhatsApp wiadomości od ioBroker",
-      "zh-cn": "允许将来自ioBroker的消息发送到您的whatsapp"
+      "zh-cn": "允许将来自ioBroker的消息发送到您的whatsapp",
+      "uk": "Дозволяє надсилати на ваш WhatsApp повідомлення з ioBroker"
     },
     "authors": [
       "bluefox <dogafox@gmail.com>"
@@ -108,7 +116,10 @@
       "whatsapp",
       "notifications"
     ],
-    "license": "MIT",
+    "licenseInformation": {
+      "license": "MIT",
+      "type": "free"
+    },
     "platform": "Javascript/Node.js",
     "main": "main.js",
     "icon": "whatsapp-cmb.png",
@@ -127,7 +138,7 @@
     "blockly": true,
     "dependencies": [
       {
-        "js-controller": ">=2.0.0"
+        "js-controller": ">=5.0.19"
       }
     ],
     "plugins": {
