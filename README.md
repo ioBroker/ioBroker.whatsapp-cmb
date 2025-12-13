@@ -76,7 +76,7 @@ Inf you want to send emojies please refer to https://www.callmebot.com/uncategor
 ## License
 MIT License
 
-Copyright (c) 2020-2024 Bluefox <dogafox@gmail.com>
+Copyright (c) 2020-2025 Bluefox <dogafox@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
