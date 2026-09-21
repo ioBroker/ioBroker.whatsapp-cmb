@@ -134,7 +134,6 @@
       "type": "free"
     },
     "platform": "Javascript/Node.js",
-    "main": "main.js",
     "icon": "whatsapp-cmb.png",
     "enabled": true,
     "extIcon": "https://raw.githubusercontent.com/ioBroker/ioBroker.whatsapp-cmb/master/admin/whatsapp-cmb.png",
