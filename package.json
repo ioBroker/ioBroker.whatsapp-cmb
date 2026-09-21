@@ -9,6 +9,7 @@
   "homepage": "https://github.com/ioBroker/ioBroker.whatsapp-cmb",
   "license": "MIT",
   "keywords": [
+    "ioBroker",
     "whatsapp",
     "notifications"
   ],
