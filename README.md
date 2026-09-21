@@ -73,6 +73,8 @@ Inf you want to send emojies please refer to https://www.callmebot.com/uncategor
 ### 0.0.1 (2020-08-27)
 * (bluefox) initial release
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 MIT License
 
