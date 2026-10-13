@@ -1,0 +1,13 @@
+{
+    "whatsapp-cmb": "WhatsApp CMB",
+    "whatsapp-cmb_message": "сообщение",
+    "whatsapp-cmb_phone": "имя пользователя (не обяз.)",
+    "whatsapp-cmb_anyInstance": "На все драйвера",
+    "whatsapp-cmb_tooltip": "Отправить сообщение в WhatsApp через CallMeBot API",
+    "whatsapp-cmb_log": "Протокол",
+    "whatsapp-cmb_log_none": "нет",
+    "whatsapp-cmb_log_info": "инфо",
+    "whatsapp-cmb_log_debug": "debug",
+    "whatsapp-cmb_log_warn": "warning",
+    "whatsapp-cmb_log_error": "ошибка"
+}

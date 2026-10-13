@@ -1,0 +1,14 @@
+// Type check of tasks.ts only. It is executed by Node's type stripping, never compiled.
+{
+    "compilerOptions": {
+        "noEmit": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "target": "es2022",
+        "module": "preserve",
+        "moduleResolution": "bundler",
+        "erasableSyntaxOnly": true,
+        "types": ["node"]
+    },
+    "include": ["tasks.ts"]
+}

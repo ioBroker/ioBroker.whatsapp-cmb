@@ -1,0 +1,13 @@
+{
+    "whatsapp-cmb": "WhatsApp CMB",
+    "whatsapp-cmb_message": "message",
+    "whatsapp-cmb_phone": "Nom d'utilisateur (facultatif)",
+    "whatsapp-cmb_anyInstance": "toutes les instances",
+    "whatsapp-cmb_tooltip": "Envoyer un message à WhatsApp via l'API CallMeBot",
+    "whatsapp-cmb_log": "niveau de journalisation",
+    "whatsapp-cmb_log_none": "aucun",
+    "whatsapp-cmb_log_info": "Info",
+    "whatsapp-cmb_log_debug": "déboguer",
+    "whatsapp-cmb_log_warn": "Attention",
+    "whatsapp-cmb_log_error": "Erreur"
+}

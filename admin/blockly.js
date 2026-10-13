@@ -1,104 +1,273 @@
-'use strict';
+// GENERATED FILE - do not edit.
+// Source: src-blockly/blockly.ts - rebuild with `npm run build:blockly`.
+"use strict";
+(() => {
+  // src-blockly/helpers.ts
+  var Blockly = window.Blockly;
+  function registerGenerator(type, generator) {
+    if (Blockly.JavaScript.forBlock) {
+      Blockly.JavaScript.forBlock[type] = generator;
+    } else {
+      Blockly.JavaScript[type] = generator;
+    }
+  }
 
-// --- SendTo whatsapp-cmb --------------------------------------------------
-Blockly.Words['whatsapp-cmb']               = {'en': 'WhatsApp CMB',                'pt': 'WhatsApp CMB',                       'pl': 'WhatsApp CMB',                           'nl': 'WhatsApp CMB',                       'it': 'WhatsApp CMB',                       'es': 'WhatsApp CMB',                       'fr': 'WhatsApp CMB',                           'de': 'WhatsApp CMB',                           'ru': 'WhatsApp CMB'};
-Blockly.Words['whatsapp-cmb_message']       = {'en': 'message',                     'pt': 'mensagem',                       'pl': 'wiadomość',                          'nl': 'bericht',                        'it': 'Messaggio',                      'es': 'mensaje',                        'fr': 'message',                            'de': 'Meldung',                            'ru': 'сообщение'};
-Blockly.Words['whatsapp-cmb_phone']         = {'en': 'Recipient (optional)',        'pt': 'Nome do usuário (opcional)',     'pl': 'Nazwa użytkownika (opcjonalnie)',    'nl': 'Gebruikersnaam (optioneel)',     'it': 'Nome utente (facoltativo)',      'es': 'Nombre de usuario (opcional)',   'fr': 'Nom d\'utilisateur (facultatif)',    'de': 'Empfänger (optional)',               'ru': 'имя пользователя (не обяз.)'};
-Blockly.Words['whatsapp-cmb_anyInstance']   = {'en': 'all instances',               'pt': 'todas as instâncias',            'pl': 'wszystkie przypadki',                'nl': 'alle instanties',                'it': 'tutte le istanze',               'es': 'todas las instancias',           'fr': 'toutes les instances',               'de': 'Alle Instanzen',                     'ru': 'На все драйвера'};
-Blockly.Words['whatsapp-cmb_tooltip']       = {"en": "Send message to WhatsApp via CallMeBot API", "de": "Senden Sie eine Nachricht über die CallMeBot-API an WhatsApp", "ru": "Отправить сообщение в WhatsApp через CallMeBot API", "pt": "Enviar mensagem para WhatsApp via API CallMeBot", "nl": "Stuur bericht naar WhatsApp via CallMeBot API", "fr": "Envoyer un message à WhatsApp via l'API CallMeBot", "it": "Invia un messaggio a WhatsApp tramite CallMeBot API", "es": "Enviar mensaje a WhatsApp a través de API CallMeBot", "pl": "Wyślij wiadomość do WhatsApp przez CallMeBot API", "zh-cn": "通过CallMeBot API将消息发送到WhatsApp"};
-Blockly.Words['whatsapp-cmb_log']           = {'en': 'log level',                   'pt': 'nível de log',                   'pl': 'poziom dziennika',                   'nl': 'Log niveau',                     'it': 'livello log',                    'es': 'nivel de registro',              'fr': 'niveau de journalisation',           'de': 'Loglevel',                           'ru': 'Протокол'};
-Blockly.Words['whatsapp-cmb_log_none']      = {'en': 'none',                        'pt': 'Nenhum',                         'pl': 'Żaden',                              'nl': 'geen',                           'it': 'nessuna',                        'es': 'ninguna',                        'fr': 'aucun',                              'de': 'keins',                              'ru': 'нет'};
-Blockly.Words['whatsapp-cmb_log_info']      = {'en': 'info',                        'pt': 'info',                           'pl': 'informacje',                         'nl': 'Info',                           'it': 'Informazioni',                   'es': 'información',                    'fr': 'Info',                               'de': 'info',                               'ru': 'инфо'};
-Blockly.Words['whatsapp-cmb_log_debug']     = {'en': 'debug',                       'pt': 'depurar',                        'pl': 'odpluskwić',                         'nl': 'Debug',                          'it': 'Debug',                          'es': 'depurar',                        'fr': 'déboguer',                           'de': 'debug',                              'ru': 'debug'};
-Blockly.Words['whatsapp-cmb_log_warn']      = {'en': 'warning',                     'pt': 'Atenção',                        'pl': 'ostrzeżenie',                        'nl': 'waarschuwing',                   'it': 'avvertimento',                   'es': 'advertencia',                    'fr': 'Attention',                          'de': 'warning',                            'ru': 'warning'};
-Blockly.Words['whatsapp-cmb_log_error']     = {'en': 'error',                       'pt': 'erro',                           'pl': 'błąd',                               'nl': 'fout',                           'it': 'errore',                         'es': 'error',                          'fr': 'Erreur',                             'de': 'error',                              'ru': 'ошибка'};
-Blockly.Words['whatsapp-cmb_help']          = {'en': 'https://github.com/ioBroker/ioBroker.whatsapp-cmb/blob/master/README.md', 'pt': 'https://github.com/ioBroker/ioBroker.whatsapp-cmb/blob/master/README.md', 'pl': 'https://github.com/ioBroker/ioBroker.whatsapp-cmb/blob/master/README.md', 'nl': 'https://github.com/ioBroker/ioBroker.whatsapp-cmb/blob/master/README.md', 'it': 'https://github.com/ioBroker/ioBroker.whatsapp-cmb/blob/master/README.md', 'es': 'https://github.com/ioBroker/ioBroker.whatsapp-cmb/blob/master/README.md', 'fr': 'https://github.com/ioBroker/ioBroker.whatsapp-cmb/blob/master/README.md', 'de': 'https://github.com/ioBroker/ioBroker.whatsapp-cmb/blob/master/README.md', 'ru': 'https://github.com/ioBroker/ioBroker.whatsapp-cmb/blob/master/README.md'};
-
-Blockly.Sendto.blocks['whatsapp-cmb'] =
-    '<block type="whatsapp-cmb">'
-    + '     <value name="INSTANCE">'
-    + '     </value>'
-    + '     <value name="MESSAGE">'
-    + '         <shadow type="text">'
-    + '             <field name="TEXT">text</field>'
-    + '         </shadow>'
-    + '     </value>'
-    + '     <value name="PHONE">'
-    + '     </value>'
-    + '     <value name="LOG">'
-    + '     </value>'
-    + '</block>';
-
-Blockly.Blocks['whatsapp-cmb'] = {
-    init: function() {
-        var options = [[Blockly.Words['whatsapp-cmb_anyInstance'][systemLang], '']];
-        if (typeof main !== 'undefined' && main.instances) {
-            for (var i = 0; i < main.instances.length; i++) {
-                var m = main.instances[i].match(/^system.adapter.whatsapp-cmb.(\d+)$/);
-                if (m) {
-                    var k = parseInt(m[1], 10);
-                    options.push(['whatsapp-cmb.' + k, '.' + k]);
-                }
-            }
-            if (options.length === 0) {
-                for (var u = 0; u <= 4; u++) {
-                    options.push(['whatsapp-cmb.' + u, '.' + u]);
-                }
-            }
-        } else {
-            for (var n = 0; n <= 4; n++) {
-                options.push(['whatsapp-cmb.' + n, '.' + n]);
-            }
+  // src-blockly/blocks/whatsappCmb.ts
+  var Blockly2 = window.Blockly;
+  function instanceOptions() {
+    const options = [[Blockly2.Translate("whatsapp-cmb_anyInstance"), ""]];
+    const instances = window.main?.instances;
+    if (instances) {
+      for (let i = 0; i < instances.length; i++) {
+        const m = instances[i].match(/^system.adapter.whatsapp-cmb.(\d+)$/);
+        if (m) {
+          const n = parseInt(m[1], 10);
+          options.push([`whatsapp-cmb.${n}`, `.${n}`]);
         }
-
-        this.appendDummyInput('INSTANCE')
-            .appendField(Blockly.Words['whatsapp-cmb'][systemLang])
-            .appendField(new Blockly.FieldDropdown(options), 'INSTANCE');
-
-        this.appendValueInput('MESSAGE')
-            .appendField(Blockly.Words['whatsapp-cmb_message'][systemLang]);
-
-        var input = this.appendValueInput('PHONE')
-            .setCheck('String')
-            .appendField(Blockly.Words['whatsapp-cmb_phone'][systemLang]);
-
-        this.appendDummyInput('LOG')
-            .appendField(Blockly.Words['whatsapp-cmb_log'][systemLang])
-            .appendField(new Blockly.FieldDropdown([
-                [Blockly.Words['whatsapp-cmb_log_none'][systemLang],  ''],
-                [Blockly.Words['whatsapp-cmb_log_info'][systemLang],  'log'],
-                [Blockly.Words['whatsapp-cmb_log_debug'][systemLang], 'debug'],
-                [Blockly.Words['whatsapp-cmb_log_warn'][systemLang],  'warn'],
-                [Blockly.Words['whatsapp-cmb_log_error'][systemLang], 'error']
-            ]), 'LOG');
-
-        if (input.connection) input.connection._optional = true;
-
+      }
+    } else {
+      for (let n = 0; n <= 4; n++) {
+        options.push([`whatsapp-cmb.${n}`, `.${n}`]);
+      }
+    }
+    return options;
+  }
+  function installWhatsappCmb() {
+    Blockly2.Sendto.blocks["whatsapp-cmb"] = `<block type="whatsapp-cmb">
+  <value name="INSTANCE">
+  </value>
+  <value name="MESSAGE">
+    <shadow type="text">
+      <field name="TEXT">text</field>
+    </shadow>
+  </value>
+  <value name="PHONE">
+  </value>
+  <value name="LOG">
+  </value>
+</block>`;
+    Blockly2.Blocks["whatsapp-cmb"] = {
+      init: function() {
+        this.appendDummyInput("INSTANCE").appendField(Blockly2.Translate("whatsapp-cmb")).appendField(new Blockly2.FieldDropdown(instanceOptions()), "INSTANCE");
+        this.appendValueInput("MESSAGE").appendField(Blockly2.Translate("whatsapp-cmb_message"));
+        const input = this.appendValueInput("PHONE").setCheck("String").appendField(Blockly2.Translate("whatsapp-cmb_phone"));
+        this.appendDummyInput("LOG").appendField(Blockly2.Translate("whatsapp-cmb_log")).appendField(
+          new Blockly2.FieldDropdown([
+            [Blockly2.Translate("whatsapp-cmb_log_none"), ""],
+            [Blockly2.Translate("whatsapp-cmb_log_info"), "log"],
+            [Blockly2.Translate("whatsapp-cmb_log_debug"), "debug"],
+            [Blockly2.Translate("whatsapp-cmb_log_warn"), "warn"],
+            [Blockly2.Translate("whatsapp-cmb_log_error"), "error"]
+          ]),
+          "LOG"
+        );
+        if (input.connection) {
+          input.connection._optional = true;
+        }
         this.setInputsInline(false);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
+        this.setColour(Blockly2.Sendto.HUE);
+        this.setTooltip(Blockly2.Translate("whatsapp-cmb_tooltip"));
+        this.setHelpUrl(Blockly2.Translate("whatsapp-cmb_help"));
+      }
+    };
+    registerGenerator("whatsapp-cmb", (block) => {
+      const instance = block.getFieldValue("INSTANCE");
+      const logLevel = block.getFieldValue("LOG");
+      const message = Blockly2.JavaScript.valueToCode(block, "MESSAGE", Blockly2.JavaScript.ORDER_ATOMIC);
+      const phone = Blockly2.JavaScript.valueToCode(block, "PHONE", Blockly2.JavaScript.ORDER_ATOMIC);
+      let logText = "";
+      if (logLevel) {
+        logText = `console.${logLevel}("whatsapp-cmb${phone ? `[${phone}]` : ""}: " + ${message});
+`;
+      }
+      return `sendTo("whatsapp-cmb${instance}", "send", {
+    text: ${message}${phone ? `,
+    phone: ${phone}` : ""}
+});
+${logText}`;
+    });
+  }
 
-        this.setColour(Blockly.Sendto.HUE);
-        this.setTooltip(Blockly.Words['whatsapp-cmb_tooltip'][systemLang]);
-        this.setHelpUrl(Blockly.Words['whatsapp-cmb_help'][systemLang]);
+  // src-blockly/i18n/de.json
+  var de_default = {
+    "whatsapp-cmb": "WhatsApp CMB",
+    "whatsapp-cmb_message": "Meldung",
+    "whatsapp-cmb_phone": "Empfänger (optional)",
+    "whatsapp-cmb_anyInstance": "Alle Instanzen",
+    "whatsapp-cmb_tooltip": "Senden Sie eine Nachricht über die CallMeBot-API an WhatsApp",
+    "whatsapp-cmb_log": "Loglevel",
+    "whatsapp-cmb_log_none": "keins",
+    "whatsapp-cmb_log_info": "info",
+    "whatsapp-cmb_log_debug": "debug",
+    "whatsapp-cmb_log_warn": "warning",
+    "whatsapp-cmb_log_error": "error"
+  };
+
+  // src-blockly/i18n/en.json
+  var en_default = {
+    "whatsapp-cmb": "WhatsApp CMB",
+    "whatsapp-cmb_message": "message",
+    "whatsapp-cmb_phone": "Recipient (optional)",
+    "whatsapp-cmb_anyInstance": "all instances",
+    "whatsapp-cmb_tooltip": "Send message to WhatsApp via CallMeBot API",
+    "whatsapp-cmb_log": "log level",
+    "whatsapp-cmb_log_none": "none",
+    "whatsapp-cmb_log_info": "info",
+    "whatsapp-cmb_log_debug": "debug",
+    "whatsapp-cmb_log_warn": "warning",
+    "whatsapp-cmb_log_error": "error"
+  };
+
+  // src-blockly/i18n/es.json
+  var es_default = {
+    "whatsapp-cmb": "WhatsApp CMB",
+    "whatsapp-cmb_message": "mensaje",
+    "whatsapp-cmb_phone": "Nombre de usuario (opcional)",
+    "whatsapp-cmb_anyInstance": "todas las instancias",
+    "whatsapp-cmb_tooltip": "Enviar mensaje a WhatsApp a través de API CallMeBot",
+    "whatsapp-cmb_log": "nivel de registro",
+    "whatsapp-cmb_log_none": "ninguna",
+    "whatsapp-cmb_log_info": "información",
+    "whatsapp-cmb_log_debug": "depurar",
+    "whatsapp-cmb_log_warn": "advertencia",
+    "whatsapp-cmb_log_error": "error"
+  };
+
+  // src-blockly/i18n/fr.json
+  var fr_default = {
+    "whatsapp-cmb": "WhatsApp CMB",
+    "whatsapp-cmb_message": "message",
+    "whatsapp-cmb_phone": "Nom d'utilisateur (facultatif)",
+    "whatsapp-cmb_anyInstance": "toutes les instances",
+    "whatsapp-cmb_tooltip": "Envoyer un message à WhatsApp via l'API CallMeBot",
+    "whatsapp-cmb_log": "niveau de journalisation",
+    "whatsapp-cmb_log_none": "aucun",
+    "whatsapp-cmb_log_info": "Info",
+    "whatsapp-cmb_log_debug": "déboguer",
+    "whatsapp-cmb_log_warn": "Attention",
+    "whatsapp-cmb_log_error": "Erreur"
+  };
+
+  // src-blockly/i18n/it.json
+  var it_default = {
+    "whatsapp-cmb": "WhatsApp CMB",
+    "whatsapp-cmb_message": "Messaggio",
+    "whatsapp-cmb_phone": "Nome utente (facoltativo)",
+    "whatsapp-cmb_anyInstance": "tutte le istanze",
+    "whatsapp-cmb_tooltip": "Invia un messaggio a WhatsApp tramite CallMeBot API",
+    "whatsapp-cmb_log": "livello log",
+    "whatsapp-cmb_log_none": "nessuna",
+    "whatsapp-cmb_log_info": "Informazioni",
+    "whatsapp-cmb_log_debug": "Debug",
+    "whatsapp-cmb_log_warn": "avvertimento",
+    "whatsapp-cmb_log_error": "errore"
+  };
+
+  // src-blockly/i18n/nl.json
+  var nl_default = {
+    "whatsapp-cmb": "WhatsApp CMB",
+    "whatsapp-cmb_message": "bericht",
+    "whatsapp-cmb_phone": "Gebruikersnaam (optioneel)",
+    "whatsapp-cmb_anyInstance": "alle instanties",
+    "whatsapp-cmb_tooltip": "Stuur bericht naar WhatsApp via CallMeBot API",
+    "whatsapp-cmb_log": "Log niveau",
+    "whatsapp-cmb_log_none": "geen",
+    "whatsapp-cmb_log_info": "Info",
+    "whatsapp-cmb_log_debug": "Debug",
+    "whatsapp-cmb_log_warn": "waarschuwing",
+    "whatsapp-cmb_log_error": "fout"
+  };
+
+  // src-blockly/i18n/pl.json
+  var pl_default = {
+    "whatsapp-cmb": "WhatsApp CMB",
+    "whatsapp-cmb_message": "wiadomość",
+    "whatsapp-cmb_phone": "Nazwa użytkownika (opcjonalnie)",
+    "whatsapp-cmb_anyInstance": "wszystkie przypadki",
+    "whatsapp-cmb_tooltip": "Wyślij wiadomość do WhatsApp przez CallMeBot API",
+    "whatsapp-cmb_log": "poziom dziennika",
+    "whatsapp-cmb_log_none": "Żaden",
+    "whatsapp-cmb_log_info": "informacje",
+    "whatsapp-cmb_log_debug": "odpluskwić",
+    "whatsapp-cmb_log_warn": "ostrzeżenie",
+    "whatsapp-cmb_log_error": "błąd"
+  };
+
+  // src-blockly/i18n/pt.json
+  var pt_default = {
+    "whatsapp-cmb": "WhatsApp CMB",
+    "whatsapp-cmb_message": "mensagem",
+    "whatsapp-cmb_phone": "Nome do usuário (opcional)",
+    "whatsapp-cmb_anyInstance": "todas as instâncias",
+    "whatsapp-cmb_tooltip": "Enviar mensagem para WhatsApp via API CallMeBot",
+    "whatsapp-cmb_log": "nível de log",
+    "whatsapp-cmb_log_none": "Nenhum",
+    "whatsapp-cmb_log_info": "info",
+    "whatsapp-cmb_log_debug": "depurar",
+    "whatsapp-cmb_log_warn": "Atenção",
+    "whatsapp-cmb_log_error": "erro"
+  };
+
+  // src-blockly/i18n/ru.json
+  var ru_default = {
+    "whatsapp-cmb": "WhatsApp CMB",
+    "whatsapp-cmb_message": "сообщение",
+    "whatsapp-cmb_phone": "имя пользователя (не обяз.)",
+    "whatsapp-cmb_anyInstance": "На все драйвера",
+    "whatsapp-cmb_tooltip": "Отправить сообщение в WhatsApp через CallMeBot API",
+    "whatsapp-cmb_log": "Протокол",
+    "whatsapp-cmb_log_none": "нет",
+    "whatsapp-cmb_log_info": "инфо",
+    "whatsapp-cmb_log_debug": "debug",
+    "whatsapp-cmb_log_warn": "warning",
+    "whatsapp-cmb_log_error": "ошибка"
+  };
+
+  // src-blockly/i18n/uk.json
+  var uk_default = {};
+
+  // src-blockly/i18n/zh-cn.json
+  var zh_cn_default = {
+    "whatsapp-cmb_tooltip": "通过CallMeBot API将消息发送到WhatsApp"
+  };
+
+  // src-blockly/words.ts
+  var Blockly3 = window.Blockly;
+  var LANGUAGES = {
+    de: de_default,
+    en: en_default,
+    es: es_default,
+    fr: fr_default,
+    it: it_default,
+    nl: nl_default,
+    pl: pl_default,
+    pt: pt_default,
+    ru: ru_default,
+    uk: uk_default,
+    "zh-cn": zh_cn_default
+  };
+  var README = "https://github.com/ioBroker/ioBroker.whatsapp-cmb/blob/master/README.md";
+  function installWords() {
+    Blockly3.Translate || (Blockly3.Translate = function(word, lang) {
+      lang || (lang = window.systemLang);
+      const entry = Blockly3.Words?.[word];
+      return entry ? entry[lang || "en"] || entry.en : word;
+    });
+    const words = {};
+    for (const [lang, texts] of Object.entries(LANGUAGES)) {
+      for (const [word, text] of Object.entries(texts)) {
+        if (text) {
+          (words[word] || (words[word] = {}))[lang] = text;
+        }
+      }
     }
-};
+    Object.assign(Blockly3.Words, words);
+    Blockly3.Words["whatsapp-cmb_help"] = { en: README };
+  }
 
-Blockly.JavaScript['whatsapp-cmb'] = function(block) {
-    var dropdown_instance = block.getFieldValue('INSTANCE');
-    var logLevel = block.getFieldValue('LOG');
-    var value_message = Blockly.JavaScript.valueToCode(block, 'MESSAGE', Blockly.JavaScript.ORDER_ATOMIC);
-    var value_phone = Blockly.JavaScript.valueToCode(block, 'PHONE', Blockly.JavaScript.ORDER_ATOMIC);
-
-    var logText;
-    if (logLevel) {
-        logText = 'console.' + logLevel + '("whatsapp-cmb' + (value_phone ? '[' + value_phone + ']' : '') + ': " + ' + value_message + ');\n'
-    } else {
-        logText = '';
-    }
-
-    return 'sendTo("whatsapp-cmb' + dropdown_instance + '", "send", {\n    text: ' +
-        value_message + (value_phone ? ',\n    ' + 'phone: ' + value_phone : '') +
-        '\n});\n' +
-        logText;
-};
+  // src-blockly/blockly.ts
+  installWords();
+  installWhatsappCmb();
+})();

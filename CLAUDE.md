@@ -11,9 +11,11 @@ TypeScript (CommonJS output). Sources live in `src/`, the published/runnable cod
 ## Commands
 
 ```bash
-npm run build                             # tsc -p tsconfig.build.json  -> build/
+npm run build                             # build:ts + build:blockly
+npm run build:ts                          # tsc -p tsconfig.build.json  -> build/
+npm run build:blockly                     # node tasks.ts: type check src-blockly/ + esbuild -> admin/blockly.js
 npm run watch                             # same in watch mode
-npm run check                             # type check only (tsconfig.json, noEmit)
+npm run check                             # type check only: src/, tasks.ts, src-blockly/
 npm run lint                              # eslint (@iobroker/eslint-config, flat config)
 npx eslint -c eslint.config.mjs --fix src # autofix + prettier formatting
 
@@ -33,7 +35,9 @@ There is deliberately **no `prepare` script** — `npm ci`/`npm install` does no
 | `src/lib/adapter-config.d.ts` | augments `ioBroker.AdapterConfig` (`apikey`, `defaultPhone`) |
 | `admin/jsonConfig.json` | the configuration dialog (two text fields + static instructions) |
 | `admin/i18n/<lang>.json` | flat translations, keys are the English labels of `jsonConfig.json` |
-| `admin/blockly.js` | Blockly "send to WhatsApp" block (`common.blockly: true`), has its own inline translations |
+| `src-blockly/` | TypeScript source of the Blockly "send to WhatsApp" block, words in `src-blockly/i18n/*.json` - see `src-blockly/README.md` |
+| `admin/blockly.js` | **generated** bundle of `src-blockly/` (`common.blockly: true`), committed - never edit by hand |
+| `tasks.ts` | build steps beside tsc (Blockly bundle), run by Node type stripping: only erasable TS syntax |
 
 `src/lib/adapter-config.d.ts` is hand-maintained and must be kept in sync with `native` in `io-package.json` **and** with `admin/jsonConfig.json` — nothing generates it.
 

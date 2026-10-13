@@ -1,0 +1,13 @@
+{
+    "whatsapp-cmb": "WhatsApp CMB",
+    "whatsapp-cmb_message": "bericht",
+    "whatsapp-cmb_phone": "Gebruikersnaam (optioneel)",
+    "whatsapp-cmb_anyInstance": "alle instanties",
+    "whatsapp-cmb_tooltip": "Stuur bericht naar WhatsApp via CallMeBot API",
+    "whatsapp-cmb_log": "Log niveau",
+    "whatsapp-cmb_log_none": "geen",
+    "whatsapp-cmb_log_info": "Info",
+    "whatsapp-cmb_log_debug": "Debug",
+    "whatsapp-cmb_log_warn": "waarschuwing",
+    "whatsapp-cmb_log_error": "fout"
+}
