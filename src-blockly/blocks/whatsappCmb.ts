@@ -9,7 +9,7 @@ const Blockly = window.Blockly;
 
 /**
  * The instance dropdown: every `whatsapp-cmb.x` the admin knows about, or `whatsapp-cmb.0` .. `whatsapp-cmb.4`
- * when the editor does not provide the instance list.
+ * while the editor has not reported any whatsapp-cmb instance (yet).
  */
 function instanceOptions(): [string, string][] {
     const options: [string, string][] = [[Blockly.Translate('whatsapp-cmb_anyInstance'), '']];
@@ -17,13 +17,17 @@ function instanceOptions(): [string, string][] {
     const instances = window.main?.instances;
     if (instances) {
         for (let i = 0; i < instances.length; i++) {
-            const m = instances[i].match(/^system.adapter.whatsapp-cmb.(\d+)$/);
+            const m = instances[i].match(/^system\.adapter\.whatsapp-cmb\.(\d+)$/);
             if (m) {
                 const n = parseInt(m[1], 10);
                 options.push([`whatsapp-cmb.${n}`, `.${n}`]);
             }
         }
-    } else {
+    }
+
+    // Nothing but "all instances" so far. The original only filled in the defaults when the editor had
+    // no instance list at all, so a list without whatsapp-cmb left the dropdown with that single entry.
+    if (options.length === 1) {
         for (let n = 0; n <= 4; n++) {
             options.push([`whatsapp-cmb.${n}`, `.${n}`]);
         }
@@ -93,11 +97,23 @@ export function installWhatsappCmb(): void {
         const message = Blockly.JavaScript.valueToCode(block, 'MESSAGE', Blockly.JavaScript.ORDER_ATOMIC);
         const phone = Blockly.JavaScript.valueToCode(block, 'PHONE', Blockly.JavaScript.ORDER_ATOMIC);
 
+        // `valueToCode` yields an empty string for an unconnected input. Emitting `text: ` or `"…" + )`
+        // would be a syntax error that takes the user's whole script down, so empty parts are left out.
         let logText = '';
         if (logLevel) {
-            logText = `console.${logLevel}("whatsapp-cmb${phone ? `[${phone}]` : ''}: " + ${message});\n`;
+            // The phone is code (a literal or a variable), so it is concatenated - not pasted into the string
+            const withPhone = phone ? `[" + ${phone} + "]` : '';
+            logText = `console.${logLevel}("whatsapp-cmb${withPhone}: "${message ? ` + ${message}` : ''});\n`;
         }
 
-        return `sendTo("whatsapp-cmb${instance}", "send", {\n    text: ${message}${phone ? `,\n    phone: ${phone}` : ''}\n});\n${logText}`;
+        const props: string[] = [];
+        if (message) {
+            props.push(`    text: ${message}`);
+        }
+        if (phone) {
+            props.push(`    phone: ${phone}`);
+        }
+
+        return `sendTo("whatsapp-cmb${instance}", "send", {\n${props.join(',\n')}\n});\n${logText}`;
     });
 }

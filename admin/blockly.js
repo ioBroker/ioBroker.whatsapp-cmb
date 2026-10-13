@@ -19,13 +19,14 @@
     const instances = window.main?.instances;
     if (instances) {
       for (let i = 0; i < instances.length; i++) {
-        const m = instances[i].match(/^system.adapter.whatsapp-cmb.(\d+)$/);
+        const m = instances[i].match(/^system\.adapter\.whatsapp-cmb\.(\d+)$/);
         if (m) {
           const n = parseInt(m[1], 10);
           options.push([`whatsapp-cmb.${n}`, `.${n}`]);
         }
       }
-    } else {
+    }
+    if (options.length === 1) {
       for (let n = 0; n <= 4; n++) {
         options.push([`whatsapp-cmb.${n}`, `.${n}`]);
       }
@@ -79,12 +80,19 @@
       const phone = Blockly2.JavaScript.valueToCode(block, "PHONE", Blockly2.JavaScript.ORDER_ATOMIC);
       let logText = "";
       if (logLevel) {
-        logText = `console.${logLevel}("whatsapp-cmb${phone ? `[${phone}]` : ""}: " + ${message});
+        const withPhone = phone ? `[" + ${phone} + "]` : "";
+        logText = `console.${logLevel}("whatsapp-cmb${withPhone}: "${message ? ` + ${message}` : ""});
 `;
       }
+      const props = [];
+      if (message) {
+        props.push(`    text: ${message}`);
+      }
+      if (phone) {
+        props.push(`    phone: ${phone}`);
+      }
       return `sendTo("whatsapp-cmb${instance}", "send", {
-    text: ${message}${phone ? `,
-    phone: ${phone}` : ""}
+${props.join(",\n")}
 });
 ${logText}`;
     });
