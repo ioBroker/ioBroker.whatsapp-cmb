@@ -141,6 +141,7 @@
     "mode": "daemon",
     "type": "messaging",
     "compact": true,
+    "nogit": true,
     "connectionType": "cloud",
     "dataSource": "push",
     "tier": 1,
@@ -151,13 +152,18 @@
         "js-controller": ">=6.0.11"
       }
     ],
+    "globalDependencies": [
+      {
+        "admin": ">=7.0.0"
+      }
+    ],
     "plugins": {
       "sentry": {
         "dsn": "https://0377685fa8ec4b0889324f8d949c94d2@sentry.iobroker.net/183"
       }
     },
     "adminUI": {
-      "config": "materialize"
+      "config": "json"
     }
   },
   "native": {

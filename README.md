@@ -53,6 +53,9 @@ Inf you want to send emojies please refer to https://www.callmebot.com/uncategor
 
 ### **WORK IN PROGRESS**
 - (ioBroker-Bot) Adapter requires js-controller >= 6.0.11 now.
+- (bluefox) The adapter was refactored to TypeScript and JsonConfig
+- (bluefox) Breaking: Node.js >= 22.19, js-controller >= 6.0.11 and admin >= 7.0.0 are required now
+- (bluefox) Replaced the deprecated `request` package with `axios`
 
 ### 0.3.0 (2024-05-25)
 * Important: Node.js 18 and js-controller 5.0.19 is required at least

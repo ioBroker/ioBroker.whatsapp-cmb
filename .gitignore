@@ -11,3 +11,5 @@ Thumbs.db
 
 #ignore .commitinfo created by ioBroker release script
 .commitinfo
+build
+*.tsbuildinfo
