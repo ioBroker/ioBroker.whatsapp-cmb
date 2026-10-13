@@ -30,10 +30,10 @@
     "@alcalzone/release-script-plugin-license": "^5.2.2",
     "@iobroker/adapter-dev": "^1.5.0",
     "@iobroker/eslint-config": "^2.3.4",
-    "@iobroker/testing": "^6.2.2",
-    "@iobroker/types": "^7.2.3",
+    "@iobroker/testing": "^6.3.1",
+    "@iobroker/types": "^7.2.5",
     "@tsconfig/node22": "^22.0.6",
-    "@types/node": "^22.20.4",
+    "@types/node": "^22.20.5",
     "blockly": "^13.3.0",
     "esbuild": "^0.28.2",
     "typescript": "~6.0.3"
@@ -62,7 +62,8 @@
     "release-patch": "release-script patch --yes",
     "release-minor": "release-script minor --yes",
     "release-major": "release-script major --yes",
-    "update-packages": "npx npm-check-updates --upgrade"
+    "update-packages": "npx npm-check-updates --upgrade && cd src-blockly && npx npm-check-updates --upgrade",
+    "npm": "npm i && cd src-blockly && npm i"
   },
   "bugs": {
     "url": "https://github.com/ioBroker/ioBroker.whatsapp-cmb/issues"
