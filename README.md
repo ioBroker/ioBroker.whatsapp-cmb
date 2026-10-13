@@ -56,6 +56,8 @@ Inf you want to send emojies please refer to https://www.callmebot.com/uncategor
 - (bluefox) The adapter was refactored to TypeScript and JsonConfig
 - (bluefox) Breaking: Node.js >= 22.19, js-controller >= 6.0.11 and admin >= 7.0.0 are required now
 - (bluefox) Replaced the deprecated `request` package with `axios`
+- (bluefox) The Blockly block was migrated to TypeScript and works again with the current Blockly editor
+- (bluefox) Blockly: an empty message no longer breaks the script, the log shows the phone number value
 
 ### 0.3.0 (2024-05-25)
 * Important: Node.js 18 and js-controller 5.0.19 is required at least
