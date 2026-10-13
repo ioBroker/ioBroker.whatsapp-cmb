@@ -50,8 +50,7 @@ If you want to send emojis please refer to https://www.callmebot.com/uncategoriz
 	### **WORK IN PROGRESS**
 -->
 ## Changelog
-
-### **WORK IN PROGRESS**
+### 1.0.0 (2026-10-13)
 - (ioBroker-Bot) Adapter requires js-controller >= 6.0.11 now.
 - (bluefox) The adapter was refactored to TypeScript and JsonConfig
 - (bluefox) Breaking: Node.js >= 22.19, js-controller >= 6.0.11 and admin >= 7.0.0 are required now
@@ -72,15 +71,6 @@ If you want to send emojis please refer to https://www.callmebot.com/uncategoriz
 ### 0.2.1 (2022-03-25)
 * (Apollon77) Add Emoticons support
 * (Apollon77) Add Sentry for crash reporting
-
-### 0.1.6 (2020-08-31)
-* (Apollon77) Fixed the error with the phone number
-
-### 0.1.3 (2020-08-29)
-* (bluefox) The documentation and translations were added.
-
-### 0.0.1 (2020-08-27)
-* (bluefox) initial release
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 

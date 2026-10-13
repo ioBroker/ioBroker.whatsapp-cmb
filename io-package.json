@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "whatsapp-cmb",
-    "version": "0.3.0",
+    "version": "1.0.0",
     "news": {
+      "1.0.0": {
+        "en": "Adapter requires js-controller >= 6.0.11 now.\nThe adapter was refactored to TypeScript and JsonConfig\nBreaking: Node.js >= 22.19, js-controller >= 6.0.11 and admin >= 7.0.0 are required now\nReplaced the deprecated `request` package with `axios`\nThe Blockly block was migrated to TypeScript and works again with the current Blockly editor\nBlockly: an empty message no longer breaks the script, the log shows the phone number value",
+        "de": "Adapter benötigt jetzt JS-Controller >= 6.0.11.\nDer Adapter wurde auf TypeScript und JSONConfig umgestellt\nNeu: Node.js >= 22.19, js-controller >= 6.0.11 und admin >= 7.0.0 sind jetzt nötig\nErsetzte das veraltete Paket „request“ durch „Axios“\nDer Block wurde zu TypeScript migriert und läuft wieder im aktuellen Editor\nBlockly: Eine leere Nachricht bricht nicht mehr, im Log steht die Telefonnummer",
+        "ru": "Теперь для адаптера требуется js-контроллер >= 6.0.11.\nАдаптер был переработан на TypeScript и JSONConfig\nСрочно: теперь требуются Node.js >= 22.19, js-контроллер >= 6.0.11 и admin >= 7.0.0\nЗаменен устаревший пакет `request` на `axios`\nБлок Blockly был перенесен в TypeScript и снова работает с текущим редактором Blockly\nBlockly: пустое сообщение больше не нарушает работу скрипта, в журнале отображается значение телефонного номера",
+        "pt": "O adaptador exige js-controller >= 6.0.11.\nO adaptador foi adaptado para TypeScript e JSONConfig\nBreve: Node.js >= 22.19, js-controller >= 6.0.11 e admin >= 7.0.0 agora\nSubstituiu o pacote obsoleto `request` por `axios`\nO bloco foi migrado para o TypeScript e refunciona com o editor Blockly atual\nBloco: uma mensagem vazia não quebra mais o script, o log mostra o número de telefone",
+        "nl": "Voor de adapter is nu een js-controller >= 6.0.11 nodig.\nDe adapter is omgevormd naar TypeScript en JSONConfig\nBreaking: Node.js >= 22.19, js-controller >= 6.0.11 en admin >= 7.0.0 zijn nu vereist\nHet verouderde pakket 'request' is vervangen door `axios`\nHet Blockly-blok is overgezet naar TypeScript en werkt weer met de huidige Blockly-editor\nBlokkerig: een leeg bericht maakt het script niet langer kapot, het logboek toont de waarde van het telefoonnummer",
+        "fr": "Adapter nécessite JS-Controller >= 6.0.11.\nL'adaptateur a été modifié en TypeScript et JSONConfig\nBreaking : Node.js >= 22.19, js-controller >= 6.0.11 et admin >= 7.0.0 sont requis\nA remplacé le package « request » obsolète par « axios »\nLe bloc Blockly a été migré vers TypeScript et fonctionne à nouveau avec l'éditeur Blockly actuel\nBlockly : un message vide ne casse plus le script, le journal indique le numéro de téléphone",
+        "it": "Adapter richiede js-controller >= 6.0.11 ora.\nL'adattatore è stato convertito in TypeScript e JSONConfig\nBreaking: Node.js >= 22.19, js-controller >= 6.0.11 e admin >= 7.0.0 ora sono necessari\nSostituito il vecchio pacchetto «request» con «axios»\nIl blocco Blockly è stato migrato a TypeScript e funziona con l'attuale editor\nBlockly: un messaggio vuoto non rompe più lo script, il log mostra il numero di telefono",
+        "es": "El adaptador ahora requiere js-controller >= 6.0.11.\nEl adaptador se refactorizó a TypeScript y JsonConfig\nÚltima hora: Node.js >= 22.19, ahora se necesitan js-controller >= 6.0.11 y admin >= 7.0.0\nSustituyó el paquete obsoleto de «request» por «axios»\nEl bloque Blockly se migró a TypeScript y vuelve a funcionar con el editor Blockly actual\nBlockly: un mensaje vacío ya no rompe el guion, el registro muestra el valor del número de teléfono",
+        "pl": "Adapter wymaga teraz kontrolera js->= 6.0.11.\nAdapter został zmieniony na TypeScript i JSONConfig\nBreaking: Node.js >= 22.19, js-controller >= 6.0.11 i admin >= 7.0.0 są teraz wymagane\nZastąpiono przestarzały pakiet `request` na `axios`\nBlok Blockly został przeniesiony do TypeScript i działa ponownie z obecnym edytorem Blockly\nBlockly: pusta wiadomość nie łamie już skryptu, dziennik pokazuje wartość numeru telefonu",
+        "uk": "Для адаптера зараз потрібен js-контролер >= 6.0.11.\nАдаптер був перероблений на TypeScript та JSONConfig\nПомилка: Node.js > = 22.19, js-контролер > = 6.0.11 та адміністратор > = 7.0.0 зараз потрібні\nЗамінено застарілий пакет `request` на `axios`\nБлок Blockly був перенесений на TypeScript і знову працює з поточним редактором Blockly\nBlockly: порожнє повідомлення більше не порушує сценарій, журнал показує значення номера телефону",
+        "zh-cn": "适配器现在需要 js-controller >= 6.0.11。\n适配器已重构为 TypeScript 和 JsonConfig\n中断：现在需要 Node.js >= 22.19、js-controller >= 6.0.11 和管理员 >= 7.0.0\n用 axios 替换了过时的 request 包\nBlockly 区块已迁移到 TypeScript，并可与当前的 Blockly 编辑器一起使用\nBlockly：空消息不再破坏脚本，日志显示电话号码值"
+      },
       "0.3.0": {
         "en": "Important: Node.js 18 and js-controller 5.0.19 is required at least\nTreats all response codes other than 200 as errors",
         "de": "Wichtig: Node.js 18 und js-controller 5.0.19 ist mindestens erforderlich\nBehandelt alle Antwortcodes außer 200 als Fehler",
@@ -80,19 +93,6 @@
         "pl": "Dodano dokumentację i tłumaczenia.",
         "zh-cn": "该文件和翻译增加了。",
         "uk": "Додано документацію та переклади."
-      },
-      "0.0.1": {
-        "en": "initial release",
-        "de": "Erstveröffentlichung",
-        "ru": "Начальная версия",
-        "pt": "lançamento inicial",
-        "nl": "Eerste uitgave",
-        "fr": "Première version",
-        "it": "Versione iniziale",
-        "es": "Versión inicial",
-        "pl": "Pierwsze wydanie",
-        "zh-cn": "首次出版",
-        "uk": "початковий випуск"
       }
     },
     "titleLang": {
