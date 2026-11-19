@@ -1,6 +1,8 @@
 import * as utils from '@iobroker/adapter-core';
 import axios from 'axios';
 
+import { COMMANDS, HELP } from './lib/help';
+
 /** Payload of the `send` command. A plain string is accepted as well and treated as `text` */
 interface SendMessagePayload {
     text?: string;
@@ -39,7 +41,12 @@ class WhatsappCmbAdapter extends utils.Adapter {
     }
 
     private onMessage(obj: ioBroker.Message): void {
-        if (typeof obj === 'object' && obj.message && this.config.apikey) {
+        if (obj?.command === 'help') {
+            // A description of all commands for AI agents and scripts; works also without the API key
+            if (obj.callback) {
+                this.sendTo(obj.from, obj.command, { help: HELP, commands: COMMANDS }, obj.callback);
+            }
+        } else if (typeof obj === 'object' && obj.message && this.config.apikey) {
             if (obj.command === 'send') {
                 const message: SendMessagePayload =
                     typeof obj.message !== 'object' ? { text: obj.message } : (obj.message as SendMessagePayload);

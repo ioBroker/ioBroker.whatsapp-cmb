@@ -41,6 +41,10 @@ sendTo('whatsapp-cmb.0', 'send', {
 });
 ``` 
 
+`sendTo('whatsapp-cmb.0', 'help', {})` answers `{ help, commands }`: a description of all messages with their
+parameters for AI agents (e.g. ioBroker.pi-agent) and script authors, and the list of all commands with `write`
+(whether the command has an effect, e.g. sends a message).
+
 ![Blockly](img/blockly.png)
 
 If you want to send emojis please refer to https://www.callmebot.com/uncategorized/how-to-use-emoticos-with-the-api/
@@ -50,6 +54,9 @@ If you want to send emojis please refer to https://www.callmebot.com/uncategoriz
 	### **WORK IN PROGRESS**
 -->
 ## Changelog
+### **WORK IN PROGRESS**
+- (bluefox) Added the message `help`: a description of all messages for AI agents (e.g. pi-agent), and `common.supportedMessages.help`
+
 ### 1.0.0 (2026-10-13)
 - (ioBroker-Bot) Adapter requires js-controller >= 6.0.11 now.
 - (bluefox) The adapter was refactored to TypeScript and JsonConfig

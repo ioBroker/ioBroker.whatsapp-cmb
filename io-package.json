@@ -146,6 +146,10 @@
     "dataSource": "push",
     "tier": 1,
     "messagebox": true,
+    "supportedMessages": {
+      "custom": true,
+      "help": true
+    },
     "blockly": true,
     "dependencies": [
       {
