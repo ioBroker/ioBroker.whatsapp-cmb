@@ -1,4 +1,7 @@
 # Older changes
+## 0.2.2 (2022-03-27)
+* (Apollon77) Fix message encoding
+
 ## 0.2.1 (2022-03-25)
 * (Apollon77) Add Emoticons support
 * (Apollon77) Add Sentry for crash reporting

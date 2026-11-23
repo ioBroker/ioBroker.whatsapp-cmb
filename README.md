@@ -54,7 +54,7 @@ If you want to send emojis please refer to https://www.callmebot.com/uncategoriz
 	### **WORK IN PROGRESS**
 -->
 ## Changelog
-### **WORK IN PROGRESS**
+### 1.2.0 (2026-11-23)
 - (bluefox) Added the standard commands of the shared catalog: message.send (`send` also takes `recipient` and answers `ok` and `sent` besides `result`), message.getRecipients (`getRecipients`: the phone number of the settings); `send` without API key and unknown commands are answered with an error, a network error as text
 
 ### 1.1.0 (2026-11-19)
@@ -74,9 +74,6 @@ If you want to send emojis please refer to https://www.callmebot.com/uncategoriz
 
 ### 0.2.3 (2022-08-29)
 * (Apollon77) Refer to website for current phone number
-
-### 0.2.2 (2022-03-27)
-* (Apollon77) Fix message encoding
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 

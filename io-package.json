@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "whatsapp-cmb",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "news": {
+      "1.2.0": {
+        "en": "Added the standard commands of the shared catalog: message.send (`send` also takes `recipient` and answers `ok` and `sent` besides `result`), message.getRecipients (`getRecipients`: the phone number of the settings); `send` without API key and unknown commands are answered with an error, a network error as text",
+        "de": "Standardbefehle des gemeinsamen Katalogs hinzugefügt: message.send (`send` nimmt auch `empfänger` und antwortet auf `ok` und `sent` außer `result`), message.getRecipients (`getRecipients`: die Telefonnummer der Einstellungen); `send` ohne API-Schlüssel und unbekannte Befehle werden mit einem Netzwerkfehler als Text beantwortet",
+        "ru": "Добавлены стандартные команды общего каталога: message.send (`send` также принимает «получатель» и, кроме `result`, отвечает «ok» и «sent»), Message.getRecipients (`GetRecipients`: телефонный номер настроек); `send` без ключа API и неизвестные команды получают ответ с ошибкой, сетевая ошибка в виде текста",
+        "pt": "Adicionados os comandos padrão do catálogo compartilhado: message.send (`send` também usa `recipient` e responde `ok` e `sent` além de `result`), message.getRecipients (`getRecipients`: o número de telefone das configurações); `send` sem chave de API e comandos desconhecidos são respondidos com um erro, um erro de rede como texto",
+        "nl": "De standaardopdrachten van de gedeelde catalogus toegevoegd: message.send (voor `send` is ook `ontvanger` nodig en beantwoordt naast `result` ook `ok` en `sent`), message.getRecipients (`getRecpients`: het telefoonnummer van de instellingen); `send` zonder API-sleutel en onbekende opdrachten worden beantwoord met een fout, een netwerkfout als tekst",
+        "fr": "Ajout des commandes standard du catalogue partagé : message.send (« send » prend également le « destinataire » et répond « ok » et « sent » en plus de « result »), message.getRecipients (« getRecipients » : le numéro de téléphone des paramètres) ; « send » sans clé API et les commandes inconnues reçoivent une erreur, une erreur réseau sous forme de texte",
+        "it": "Aggiunti i comandi standard del catalogo condiviso: message.send (`send` accetta anche `recipient` e risponde `ok` e `sent` oltre a `result`), message.getRecipients (`getRecipients`: il numero di telefono delle impostazioni); `send` senza chiave API e ai comandi sconosciuti",
+        "es": "Se han añadido los comandos estándar del catálogo compartido: message.send (`send` también toma «destinatario» y responde «ok» y «enviado» además de «resultado»), Message.getRecipients (`getRecipients`: el número de teléfono de la configuración); `enviar` sin la clave API y los comandos desconocidos se responden con un error, un error de red como texto",
+        "pl": "Dodano standardowe polecenia udostępnionego katalogu: message.send („send” bierze również „odbiorca” i odpowiada `ok` i `sent` oprócz `result`), Message.getRecipients (`GetRecients`: numer telefonu ustawień); `send` bez klucza API i nieznane polecenia odpowiadają z błędem, błędem sieciowym jako tekst",
+        "uk": "Додані стандартні команди спільного каталогу: message.send (`send` також приймає `одержувач` і відповідає `ok` і `sent` крім `result`), Message.getRecipients (`getRecipients`: номер телефону налаштувань); `send` без ключа API та невідомих команд відповідають помилкою, помилка мережі у вигляді тексту",
+        "zh-cn": "添加了共享目录的标准命令：message.send（`send` 还接受 “收件人”，除了 “结果” 之外还回答 “确定” 和 “已发送”）、Message.getRecipients（`getRecipients`：设置的电话号码）；没有 API 密钥的 “发送” 和未知命令会以错误的形式回答，网络错误以文本形式回答"
+      },
       "1.1.0": {
         "en": "Added the message `help`: a description of all messages for AI agents (e.g. pi-agent), and `common.supportedMessages.help`",
         "de": "Die Meldung `help`, eine Beschreibung aller Nachrichten für KI-Agenten (z. B. pi-agent), und `common.supportedMessages.Help` hinzugefügt",
@@ -80,19 +93,6 @@
         "pl": "Obsługa dodawania emotikonów\nDodaj Sentry do zgłaszania awarii",
         "zh-cn": "添加表情支持\n添加 Sentry 以进行崩溃报告",
         "uk": "Додайте підтримку смайлів\nДодайте Sentry для звітування про збої"
-      },
-      "0.1.6": {
-        "en": "Fixed the error with the phone number",
-        "de": "Der Fehler mit der Telefonnummer wurde behoben",
-        "ru": "Исправлена ошибка с номером телефона",
-        "pt": "Corrigido o erro com o número de telefone",
-        "nl": "De fout met het telefoonnummer opgelost",
-        "fr": "Correction de l'erreur avec le numéro de téléphone",
-        "it": "Risolto l'errore con il numero di telefono",
-        "es": "Se corrigió el error con el número de teléfono.",
-        "pl": "Naprawiono błąd związany z numerem telefonu",
-        "zh-cn": "解决了电话号码错误",
-        "uk": "Виправили помилку з номером телефону"
       }
     },
     "titleLang": {
