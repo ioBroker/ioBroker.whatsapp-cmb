@@ -7,6 +7,8 @@ import { COMMANDS, HELP } from './lib/help';
 interface SendMessagePayload {
     text?: string;
     phone?: string;
+    /** `recipient` of message.send (the shared catalog): the same as phone */
+    recipient?: string | number;
 }
 
 class WhatsappCmbAdapter extends utils.Adapter {
@@ -46,36 +48,54 @@ class WhatsappCmbAdapter extends utils.Adapter {
             if (obj.callback) {
                 this.sendTo(obj.from, obj.command, { help: HELP, commands: COMMANDS }, obj.callback);
             }
-        } else if (typeof obj === 'object' && obj.message && this.config.apikey) {
-            if (obj.command === 'send') {
-                const message: SendMessagePayload =
-                    typeof obj.message !== 'object' ? { text: obj.message } : (obj.message as SendMessagePayload);
-                message.phone ||= this.config.defaultPhone;
-
-                if (!message.phone) {
-                    this.log.warn('Default phone number is not provided!');
-                    // Legacy: reports success although nothing was sent. Kept to not break existing scripts.
-                    if (obj.callback) {
-                        this.sendTo(obj.from, obj.command, { result: 'Message sent' }, obj.callback);
-                    }
-                    return;
-                }
-
-                this.log.info(`Send ${message.text} to ${message.phone}`);
-
-                this.sendMessageToWhatsApp(message.text, message.phone)
-                    .then(() => {
-                        if (obj.callback) {
-                            this.sendTo(obj.from, obj.command, { result: 'Message sent' }, obj.callback);
-                        }
-                    })
-                    .catch(err => {
-                        this.log.error(`Cannot send message: ${err}`);
-                        if (obj.callback) {
-                            this.sendTo(obj.from, obj.command, { error: err }, obj.callback);
-                        }
-                    });
+        } else if (obj?.command === 'getRecipients') {
+            // message.getRecipients of the shared catalog: the phone number of the settings, nothing is sent
+            if (obj.callback) {
+                const phone = this.config.defaultPhone;
+                const recipients = phone ? [{ id: phone, name: phone, kind: 'user', default: true }] : [];
+                this.sendTo(obj.from, obj.command, { recipients }, obj.callback);
             }
+        } else if (typeof obj === 'object' && obj.message && this.config.apikey && obj.command === 'send') {
+            const message: SendMessagePayload =
+                typeof obj.message !== 'object' ? { text: obj.message } : (obj.message as SendMessagePayload);
+            message.phone ||= (message.recipient ? String(message.recipient) : '') || this.config.defaultPhone;
+
+            if (!message.phone) {
+                this.log.warn('Default phone number is not provided!');
+                // Legacy: reports success although nothing was sent. Kept to not break existing scripts;
+                // sent: 0 (message.send of the shared catalog) tells that nothing went out.
+                if (obj.callback) {
+                    this.sendTo(obj.from, obj.command, { result: 'Message sent', ok: true, sent: 0 }, obj.callback);
+                }
+                return;
+            }
+
+            this.log.info(`Send ${message.text} to ${message.phone}`);
+
+            this.sendMessageToWhatsApp(message.text, message.phone)
+                .then(() => {
+                    if (obj.callback) {
+                        // result as before; ok and sent of message.send (a message without text is not sent)
+                        const answer = { result: 'Message sent', ok: true, sent: message.text ? 1 : 0 };
+                        this.sendTo(obj.from, obj.command, answer, obj.callback);
+                    }
+                })
+                .catch(err => {
+                    this.log.error(`Cannot send message: ${err}`);
+                    if (obj.callback) {
+                        // As text: an Error object arrives as {} (or, from axios, with the URL and the API key)
+                        const error = err instanceof Error ? err.message : String(err);
+                        this.sendTo(obj.from, obj.command, { error }, obj.callback);
+                    }
+                });
+        } else if (obj?.callback) {
+            let answer = { error: `Unknown command "${obj.command}"`, reason: 'NOT_SUPPORTED' };
+            if (obj.command === 'send') {
+                answer = this.config.apikey
+                    ? { error: 'The text is missing', reason: 'BAD_REQUEST' }
+                    : { error: 'No API key in the settings', reason: 'NOT_CONFIGURED' };
+            }
+            this.sendTo(obj.from, obj.command, answer, obj.callback);
         }
     }
 

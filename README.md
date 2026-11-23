@@ -54,6 +54,9 @@ If you want to send emojis please refer to https://www.callmebot.com/uncategoriz
 	### **WORK IN PROGRESS**
 -->
 ## Changelog
+### **WORK IN PROGRESS**
+- (bluefox) Added the standard commands of the shared catalog: message.send (`send` also takes `recipient` and answers `ok` and `sent` besides `result`), message.getRecipients (`getRecipients`: the phone number of the settings); `send` without API key and unknown commands are answered with an error, a network error as text
+
 ### 1.1.0 (2026-11-19)
 - (bluefox) Added the message `help`: a description of all messages for AI agents (e.g. pi-agent), and `common.supportedMessages.help`
 
